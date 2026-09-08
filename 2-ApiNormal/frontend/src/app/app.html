@@ -1,0 +1,14 @@
+<mat-toolbar class="barra">
+  <mat-icon>groups</mat-icon>
+  <span class="barra__titulo">{{ title() }}</span>
+</mat-toolbar>
+
+<main class="contenido">
+  <mat-tab-group>
+    <mat-tab label="Personas">
+      <div class="panel">
+        <app-personas />
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</main>

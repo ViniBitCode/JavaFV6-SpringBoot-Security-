@@ -1,0 +1,165 @@
+<div class="personas">
+  @if (!puedeCrear || !puedeListar) {
+    <div class="aviso">
+      <mat-icon>info</mat-icon>
+      <div>
+        <strong>Falta enchufar el backend.</strong>
+        Completá <code>baseUrl</code> y los endpoints
+        @if (!puedeCrear) { <code>crearPersona</code> }
+        @if (!puedeCrear && !puedeListar) { y }
+        @if (!puedeListar) { <code>listarPersonas</code> }
+        en <code>src/app/core/api.config.ts</code>.
+      </div>
+    </div>
+  }
+
+  <mat-card class="formulario" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Nueva persona</mat-card-title>
+      <mat-card-subtitle>Se envía por POST a tu API de Spring Boot</mat-card-subtitle>
+    </mat-card-header>
+
+    @if (guardando()) {
+      <mat-progress-bar mode="indeterminate" />
+    }
+
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="guardar()" class="campos">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" autocomplete="given-name" />
+          @if (form.controls.nombre.hasError('required')) {
+            <mat-error>El nombre es obligatorio</mat-error>
+          } @else if (form.controls.nombre.hasError('maxlength')) {
+            <mat-error>Máximo 60 caracteres</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="apellido" autocomplete="family-name" />
+          @if (form.controls.apellido.hasError('required')) {
+            <mat-error>El apellido es obligatorio</mat-error>
+          } @else if (form.controls.apellido.hasError('maxlength')) {
+            <mat-error>Máximo 60 caracteres</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" autocomplete="email" />
+          @if (form.controls.email.hasError('required')) {
+            <mat-error>El email es obligatorio</mat-error>
+          } @else if (form.controls.email.hasError('email')) {
+            <mat-error>Ese email no tiene buena pinta</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de nacimiento</mat-label>
+          <input
+            matInput
+            formControlName="fechaNacimiento"
+            [matDatepicker]="calendario"
+            [max]="hoy"
+            placeholder="dd/mm/aaaa"
+          />
+          <mat-datepicker-toggle matIconSuffix [for]="calendario" />
+          <mat-datepicker #calendario startView="multi-year" />
+          @if (form.controls.fechaNacimiento.hasError('required')) {
+            <mat-error>Elegí una fecha</mat-error>
+          } @else if (form.controls.fechaNacimiento.hasError('matDatepickerMax')) {
+            <mat-error>No puede ser una fecha futura</mat-error>
+          } @else if (form.controls.fechaNacimiento.hasError('matDatepickerParse')) {
+            <mat-error>Fecha inválida</mat-error>
+          }
+        </mat-form-field>
+
+        <div class="acciones">
+          <button matButton (click)="form.reset()" type="button" [disabled]="guardando()">
+            Limpiar
+          </button>
+          <button matButton="filled" type="submit" [disabled]="guardando()">
+            {{ guardando() ? 'Guardando…' : 'Guardar persona' }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  @if (error(); as mensaje) {
+    <div class="mensaje mensaje--error">
+      <mat-icon>error_outline</mat-icon>
+      <span>{{ mensaje }}</span>
+    </div>
+  }
+
+  @if (exito(); as mensaje) {
+    <div class="mensaje mensaje--ok">
+      <mat-icon>check_circle_outline</mat-icon>
+      <span>{{ mensaje }}</span>
+    </div>
+  }
+
+  <mat-card class="listado" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Personas cargadas</mat-card-title>
+      <mat-card-subtitle>
+        {{ personas().length }} {{ personas().length === 1 ? 'registro' : 'registros' }}
+      </mat-card-subtitle>
+      <button
+        matIconButton
+        class="refrescar"
+        type="button"
+        aria-label="Refrescar listado"
+        [disabled]="!puedeListar || cargando()"
+        (click)="cargar()"
+      >
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </mat-card-header>
+
+    @if (cargando()) {
+      <mat-progress-bar mode="indeterminate" />
+    }
+
+    <mat-card-content>
+      @if (personas().length) {
+        <div class="tabla-scroll">
+          <table mat-table [dataSource]="personas()">
+            <ng-container matColumnDef="nombre">
+              <th mat-header-cell *matHeaderCellDef>Nombre</th>
+              <td mat-cell *matCellDef="let p">{{ p.nombre }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="apellido">
+              <th mat-header-cell *matHeaderCellDef>Apellido</th>
+              <td mat-cell *matCellDef="let p">{{ p.apellido }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef>Email</th>
+              <td mat-cell *matCellDef="let p">{{ p.email }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="fechaNacimiento">
+              <th mat-header-cell *matHeaderCellDef>Nacimiento</th>
+              <td mat-cell *matCellDef="let p">{{ formatearFecha(p.fechaNacimiento) }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+            <tr mat-row *matRowDef="let fila; columns: columnas"></tr>
+          </table>
+        </div>
+      } @else if (!cargando()) {
+        <p class="vacio">
+          @if (puedeListar) {
+            Todavía no hay personas cargadas.
+          } @else {
+            Configurá el endpoint <code>listarPersonas</code> para ver el listado.
+          }
+        </p>
+      }
+    </mat-card-content>
+  </mat-card>
+</div>
