@@ -1,0 +1,23 @@
+.barra {
+  gap: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--mat-sys-surface-container);
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.barra__titulo {
+  font: var(--mat-sys-title-medium);
+  letter-spacing: 0.02em;
+}
+
+.contenido {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.panel {
+  padding-top: 1.5rem;
+}
