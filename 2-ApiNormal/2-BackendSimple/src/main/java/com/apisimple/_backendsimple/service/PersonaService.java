@@ -10,27 +10,37 @@ import java.util.List;
 
 @Service
 // Funciones de operaciones sobre la persona
-public class PersonaService implements IPersonaService{
+public class PersonaService implements IPersonaService {
 
     @Autowired
     private IPersonaRepository personaRepo;
 
     @Override
     public void crearPersona(Persona persona) {
-        System.out.println("Se crea la persona");
+        personaRepo.save(persona);
+    }
+
+    @Override
+    public void deletePersona(Long id) {
+        personaRepo.deleteById(id);
+    }
+
+    @Override
+    public void editarPersona(Long id, String nombre, String apellido) {
+        Persona persona = this.findPersona(id);
+        persona.setApellido(apellido);
+        persona.setNombre(nombre);
+        this.crearPersona(persona);
     }
 
     @Override
     public List<Persona> traerPersonas() {
+        return personaRepo.findAll();
+    }
 
-        List<Persona> listaPersonas = new ArrayList<Persona>();
-
-        listaPersonas.add(new Persona(1L, "Nombre1", "apellido1"));
-        listaPersonas.add(new Persona(2L, "Nombre2", "apellido2"));
-        listaPersonas.add(new Persona(3L, "Nombre3", "apellido3"));
-
-        return listaPersonas;
-
+    @Override
+    public Persona findPersona(Long id) {
+        return personaRepo.findById(id).orElse(null);
     }
 
 

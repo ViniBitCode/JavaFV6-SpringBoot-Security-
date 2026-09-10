@@ -19,7 +19,7 @@ public class ControllerPrimitiva {
     . Ejemplo de la URL: http://localhost:8080/hello/yoda
     */
 
-    @GetMapping({"hello", "/hello/", "/hello/{nombre}"})
+    @GetMapping({"hello_ejemplo", "/hello_ejemplo/", "/hello_ejemplo/{nombre}"})
     public String sayHello(@PathVariable(required = false) String nombre) {
         return "hola " + (nombre == null ? "Ningun nombre" : nombre);
     }
@@ -27,14 +27,14 @@ public class ControllerPrimitiva {
     /* Ejemplo con @RequestParam. Los atributos los mando mediante la URL.
     . Ejemplo de la URL: http://localhost:8080/ciao?nombre=yo&edad=21
     */
-    @GetMapping("/ciao")
+    @GetMapping("/ciao_ejemplo")
     public String sayBye(@RequestParam int edad, @RequestParam String nombre) {
         return "Chau " + nombre + " - Edad: " + edad;
     }
 
     /* Ejemplo con @RequestBody y metodo HTTP Post. Los atributos los mando Postman.
      */
-    @PostMapping("/persona")
+    @PostMapping("/ejemplo")
     public void crearPersona(@RequestBody Persona persona) {
         System.out.println("Persona creada");
         System.out.println("Nombre " + persona.getNombre());
@@ -42,8 +42,8 @@ public class ControllerPrimitiva {
     }
 
     /* Ejemplo con @ResponseBody y metodo HTTP Get. Recibo los atributos en forma de JSON.
-     */
-    @GetMapping("/persona/traerlos")
+
+    @GetMapping("/ejemplo/traerlos")
     @ResponseBody
     public List<Persona> obtenerClientes() {
 
@@ -55,13 +55,13 @@ public class ControllerPrimitiva {
 
         return listaPersonas;
 
-    }
+    } */
 
 
     /* Ejemplo con ResponseEntity para manipular la response del back. Se puede manipular todo el response,
     no solo el mensaje.
      */
-    @GetMapping("/response")
+    @GetMapping("/response_ejemplo")
     ResponseEntity<String> devolverResponsePersonalizado() {
         return new ResponseEntity<>("Este es un responde personalizado", HttpStatus.ACCEPTED);
     }
@@ -69,8 +69,8 @@ public class ControllerPrimitiva {
     /* Ejemplo con DTOs para poder mostrar datos de diferentes objetos en uno solo.
         . Para este ejemplo, debemos simular que el id_duenio del path variable busca en una BBDD
         el id del duenio y trae la mascota que tiene.
-     */
-    @GetMapping("/mascota/{id_duenio}")
+
+    @GetMapping("/mascota_ejemplo/{id_duenio}")
     @ResponseBody
     public PersonaMascotaDTO obtenerMascotas(@PathVariable long id_duenio) {
 
@@ -85,19 +85,5 @@ public class ControllerPrimitiva {
 
         return duenioMascota;
 
-    }
-
-    /* Ejemplo con @ResponseBody y metodo HTTP Get. Ahora hago uso de la arquitectura multicapa.
-     */
-
-    @Autowired
-    IPersonaService personaInterfaz;
-
-    @GetMapping("/persona/multicapa")
-    @ResponseBody
-    public List<Persona> obtenerClientesMulticapa() {
-        return personaInterfaz.traerPersonas();
-    }
-
-
+    } */
 }

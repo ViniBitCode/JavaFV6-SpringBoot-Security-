@@ -1,14 +1,10 @@
 package com.apisimple._backendsimple.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.boot.registry.selector.spi.StrategyCreator;
 
 @Getter @Setter
 @AllArgsConstructor
@@ -17,10 +13,14 @@ import org.hibernate.boot.registry.selector.spi.StrategyCreator;
 public class Persona {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id_persona;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_persona;
 
     private String nombre;
     private String apellido;
+
+    @OneToOne
+    @JoinColumn (name = "mascota_id_mascota", referencedColumnName = "id_mascota")
+    private Mascota mascota;
 
 }
