@@ -1,6 +1,8 @@
 package com.apisimple._backendsimple.service;
 
 import com.apisimple._backendsimple.model.Persona;
+import com.apisimple._backendsimple.repository.IPersonaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,6 +11,9 @@ import java.util.List;
 @Service
 // Funciones de operaciones sobre la persona
 public class PersonaService implements IPersonaService{
+
+    @Autowired
+    private IPersonaRepository personaRepo;
 
     @Override
     public void crearPersona(Persona persona) {
@@ -27,7 +32,6 @@ public class PersonaService implements IPersonaService{
         return listaPersonas;
 
     }
-
 
 
 }
