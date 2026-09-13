@@ -35,12 +35,13 @@ public class SecurityConfig {
         return httpSecurity
                 // Desabilita la configuracion CSRF para poderusar un front independiente
                 .csrf(csrf -> csrf.disable())
-
                 // Establece configuraciones basicas de HTTP
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-
                 .build(); // Finaliza la construccion de los filtros
+
+
+
 
                 /* Esta es una manera manual de poner permisos, pero se cambia a una manera mas amigable haciendo uso de Annotations.
                     // Le indico que mis sesiones van a ser Stateless y no stateful
@@ -58,9 +59,6 @@ public class SecurityConfig {
                 .anyRequest().authenticated()               // Cualquier otra solicitud pide que se deba autenticar previamente
                 .formLogin(form -> form.permitAll()) // Todos pueden hacer el login
                 */
-
-
-
     }
 
 
