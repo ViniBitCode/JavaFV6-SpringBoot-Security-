@@ -57,7 +57,7 @@ public class UserController {
             UserSecurity newUser = userService.save(userSec);
             return ResponseEntity.ok(newUser);
         }
-        return null;
+        return null; // Devolvemos null porque significa que el usuario no tiene roles y por ende no se puede crear.
     }
 }
 

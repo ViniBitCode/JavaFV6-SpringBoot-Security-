@@ -13,7 +13,7 @@ public interface IUserRepository extends JpaRepository<UserSecurity, Long> {
     // Crea la sentencia en base al nombre en inglés del método
     // Tmb se puede hacer mediante Query pero en este caso no es necesario
     // JPA tiene la capacidad de que si le ponemos el atributo, la query la hace sola por detras
-    Optional findUserEntityByUsername(String username);
+    Optional<UserSecurity> findUserEntityByUsername(String username);
 
 }
 

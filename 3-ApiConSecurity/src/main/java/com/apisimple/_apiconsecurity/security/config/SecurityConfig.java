@@ -80,6 +80,7 @@ public class SecurityConfig {
         return NoOpPasswordEncoder.getInstance();
     }
 
+    /*
     @Bean // Aca vamos definiendo los usuarios, simulando desde una BBDD
     public UserDetailsService userDetailsService() {
         List<UserDetails> userDetailList = new ArrayList<>();
@@ -105,6 +106,6 @@ public class SecurityConfig {
 
         return new InMemoryUserDetailsManager(userDetailList);
     }
-
+    */
 
 }
