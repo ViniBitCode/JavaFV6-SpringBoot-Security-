@@ -13,6 +13,6 @@ public interface IUserService {
     public UserSecurity save(UserSecurity userSec);
     public void deleteById(Long id);
     public void update(UserSecurity userSec);
-
+    public String encriptPassword(String password);
 }
 

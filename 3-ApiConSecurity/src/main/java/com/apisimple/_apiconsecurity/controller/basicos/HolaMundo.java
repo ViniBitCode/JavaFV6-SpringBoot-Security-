@@ -1,4 +1,4 @@
-package com.apisimple._apiconsecurity.controller;
+package com.apisimple._apiconsecurity.controller.basicos;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;

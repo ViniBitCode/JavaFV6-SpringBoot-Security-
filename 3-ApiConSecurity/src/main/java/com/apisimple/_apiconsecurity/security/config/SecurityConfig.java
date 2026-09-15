@@ -1,5 +1,8 @@
 package com.apisimple._apiconsecurity.security.config;
 
+import com.apisimple._apiconsecurity.security.config.filter.JwtTokenValidator;
+import com.apisimple._apiconsecurity.utils.JwtUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -15,10 +18,12 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +32,9 @@ import java.util.List;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+
+    @Autowired
+    private JwtUtils jwtUtils;
 
     /* Aplicacion seguridad sobre endpoints */
     @Bean // Esta annotation nos indica que la funcion va a laburar como si fuera un "bean/objeto" de Spring
@@ -38,10 +46,8 @@ public class SecurityConfig {
                 // Establece configuraciones basicas de HTTP
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(new JwtTokenValidator(jwtUtils), BasicAuthenticationFilter.class) // Aca le meto el JwtToken en la cadena de filtro
                 .build(); // Finaliza la construccion de los filtros
-
-
-
 
                 /* Esta es una manera manual de poner permisos, pero se cambia a una manera mas amigable haciendo uso de Annotations.
                     // Le indico que mis sesiones van a ser Stateless y no stateful
@@ -52,7 +58,6 @@ public class SecurityConfig {
                         http.anyRequest().denyAll();
                     })
                 */
-
 
                 /* estas funciones fueron ejemplos sin haber hecho uso de los roles y permisos.
                 .requestMatchers("/holaNoSeg").permitAll()  // Se puede entrar sin necesidad de autenticar
@@ -77,7 +82,9 @@ public class SecurityConfig {
 
     @Bean // En el momento, no se va a codificar la contrasenia, por el momento se deja la pass en texto plano.
     public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+
+        // return NoOpPasswordEncoder.getInstance(); - De esta manera no encripto claves. Muy mal!
+        return new BCryptPasswordEncoder(); // Indico que voy a usar le metodo BCrypt!
     }
 
     /*

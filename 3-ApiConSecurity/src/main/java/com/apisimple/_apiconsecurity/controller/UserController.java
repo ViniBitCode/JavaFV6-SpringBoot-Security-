@@ -42,6 +42,9 @@ public class UserController {
         Set<Role> roleList = new HashSet<>();
         Role readRole;
 
+        // En este aparatado encriptamos la clave
+        userSec.setPassword(userService.encriptPassword(userSec.getPassword()));
+
         // Recuperar la Permission/s por su ID
         for (Role role : userSec.getRolesList()){
             readRole = (Role) roleService.findById(role.getId()).orElse(null);

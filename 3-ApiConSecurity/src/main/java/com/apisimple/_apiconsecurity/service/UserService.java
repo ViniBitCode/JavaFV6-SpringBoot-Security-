@@ -4,6 +4,7 @@ package com.apisimple._apiconsecurity.service;
 import com.apisimple._apiconsecurity.model.UserSecurity;
 import com.apisimple._apiconsecurity.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,6 +39,11 @@ public class UserService implements IUserService {
     @Override
     public void update(UserSecurity userSec) {
         save(userSec);
+    }
+
+    @Override
+    public String encriptPassword(String password) {
+        return new BCryptPasswordEncoder().encode(password);
     }
 }
 
