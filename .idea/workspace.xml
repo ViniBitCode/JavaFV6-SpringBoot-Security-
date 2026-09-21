@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="creacion de usuario">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ProyectosJava.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2-ApiNormal/2-BackendSimple/src/main/java/com/apisimple/_backendsimple/service/IMascotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-ApiNormal/2-BackendSimple/src/main/java/com/apisimple/_backendsimple/service/IMascotaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/PermissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/UserSecController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/EntidadNoEncontradaException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/NoHayEntidadesException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/RolNoTienePermisosException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/ValorYaExisteException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/Permission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/UserSecurity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/PermissionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/UserSecurityRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/securityConfig/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/PermissionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/PermissionServiceImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/RoleServiceImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/UserSecImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/UserSecService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/test-classes/com/apisimple/_2practicaapisecurity/ApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="221" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Spring Repository" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Exception" />
+        <option value="Record" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46-sources.jar!/lombok/AllArgsConstructor.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="4.291362677056871E-113" />
+      <entry key="S5" value="1.7082277644107803E-45" />
+      <entry key="S10" value="6.608917256892309E-23" />
+      <entry key="S30" value="8.476415558065016E-8" />
+      <entry key="S60" value="6.029515403517295E-4" />
+      <entry key="M2" value="0.06582146790703433" />
+      <entry key="M5" value="1.6727677616228476" />
+      <entry key="M10" value="7.518128949138508" />
+      <entry key="M15" value="15.8550778036062" />
+      <entry key="M30" value="45.10640662448813" />
+      <entry key="H1" value="100.14892043292306" />
+      <entry key="H2" value="212.23783787958888" />
+      <entry key="H4" value="395.1929351547526" />
+      <entry key="D1" value="788.2062119992714" />
+      <entry key="W1" value="901.251667593746" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.000000000000151" />
+      <entry key="MS500" value="1.0027278877587253" />
+      <entry key="S2" value="1.228537053740998" />
+      <entry key="S5" value="1.5540929822060732" />
+      <entry key="S10" value="1.7443742218844451" />
+      <entry key="S30" value="1.906283050239109" />
+      <entry key="S60" value="1.9530122743986607" />
+      <entry key="M2" value="2.064738034665048" />
+      <entry key="M5" value="3.8877045632060656" />
+      <entry key="M10" value="9.128534862094057" />
+      <entry key="M15" value="15.425128448142964" />
+      <entry key="M30" value="36.19354806516737" />
+      <entry key="H1" value="76.59742893898826" />
+      <entry key="H2" value="161.87915271815865" />
+      <entry key="H4" value="299.54176549818993" />
+      <entry key="D1" value="588.7925117580138" />
+      <entry key="W1" value="670.9569065672963" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.4944767724409905E-5" />
+      <entry key="MS500" value="0.10844585600027849" />
+      <entry key="S2" value="0.667928112412788" />
+      <entry key="S5" value="1.1894020333758943" />
+      <entry key="S10" value="1.5182691973760314" />
+      <entry key="S30" value="1.8179121388637913" />
+      <entry key="S60" value="1.9075309228927448" />
+      <entry key="M2" value="2.106280661921228" />
+      <entry key="M5" value="5.5432381530099875" />
+      <entry key="M10" value="16.62493302967526" />
+      <entry key="M15" value="31.253509378214996" />
+      <entry key="M30" value="81.26500333256763" />
+      <entry key="H1" value="176.70802574433253" />
+      <entry key="H2" value="374.0766877376739" />
+      <entry key="H4" value="694.6979203368618" />
+      <entry key="D1" value="1376.98686672891" />
+      <entry key="W1" value="1572.2066496450523" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JVhcYo6hpumsAUaqliJNDazT53" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Maven.3-2-PracticaApiSecurity [clean].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ruby.rubocop.migration.global.runOnSaveToExternalFormatter&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application (3).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new-projects&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Proyectos personales/ProyectosJava&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RubyModuleManagerSettings">
+    <option name="blackListedRootsPaths">
+      <list>
+        <option value="$PROJECT_DIR$/2-ApiNormal/2-BackendSimple" />
+        <option value="$PROJECT_DIR$/3.1-ApiConOAuth2" />
+        <option value="$PROJECT_DIR$/3.2-PracticaApiSecurity" />
+        <option value="$PROJECT_DIR$" />
+        <option value="$PROJECT_DIR$/3-ApiConSecurity" />
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <set>
+              <option value="Application" />
+              <option value="Application (1)" />
+              <option value="Application (2)" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="Application" value="STOPPED" />
+              <entry key="Application (3)" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application (3)">
+    <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="3-ApiConSecurity" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._apiconsecurity.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="3-1-ApiConOAuth2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._1apiconoauth2.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="DB_PASSWORD" value="290703" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/3.2.PracticaConSecurity" />
+        <env name="DB_USER" value="postgres" />
+        <env name="SS_PASSWORD" value="1234" />
+        <env name="SS_USER" value="facuvini" />
+      </envs>
+      <module name="3-2-PracticaApiSecurity" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._2practicaapisecurity.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="2-BackendSimple" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._backendsimple.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Spring Boot.Application (1)" />
+      <item itemvalue="Spring Boot.Application (2)" />
+      <item itemvalue="Spring Boot.Application (3)" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="" />
+      <created>1789752222828</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789752222828</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="creacion de usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="creacion de usuario" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanDefinitionStoreException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

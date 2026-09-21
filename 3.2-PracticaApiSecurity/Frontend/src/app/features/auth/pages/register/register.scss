@@ -1,0 +1,89 @@
+:host {
+  display: grid;
+  gap: 1.25rem;
+  animation: enter 0.22s var(--ease) both;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.head {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.head__title {
+  font-family: var(--font-mono);
+  font-size: var(--step-5);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.head__lead {
+  font-size: var(--step-2);
+  color: var(--ink-2);
+}
+
+.head__lead code {
+  padding: 0.05em 0.35em;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--amber);
+  background: var(--amber-soft);
+  border-radius: var(--radius);
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+/* medidor de fuerza: cuatro bloques, sin colores estridentes */
+.meter {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.15rem;
+}
+
+.meter__bars {
+  display: flex;
+  flex: 1;
+  gap: 0.25rem;
+}
+
+.meter__bars i {
+  flex: 1;
+  height: 5px;
+  background: var(--surface-3);
+  border: 1px solid var(--line);
+  border-radius: 1px;
+  transition: background-color 0.2s var(--ease);
+}
+
+.meter__bars i.is-on {
+  background: var(--amber);
+  border-color: var(--amber);
+}
+
+.meter[data-score='4'] .meter__bars i.is-on {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.meter__label {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  color: var(--ink-3);
+}
+
+.btn--block {
+  width: 100%;
+  text-decoration: none;
+}

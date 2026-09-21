@@ -1,0 +1,132 @@
+<header class="head">
+  <p class="eyebrow">02 · Alta</p>
+  <h2 class="head__title">Creá tu cuenta</h2>
+  <p class="head__lead">
+    Las cuentas nuevas arrancan con el rol <code>USER</code>; los permisos los asigna un
+    administrador.
+  </p>
+</header>
+
+<form class="form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  @if (serverError(); as error) {
+    <p class="alert" role="alert">
+      <span class="alert__mark" aria-hidden="true">!</span>
+      <span>{{ error }}</span>
+    </p>
+  }
+
+  <div class="field">
+    <label class="field__label" for="reg-user">
+      Usuario
+      <span class="field__hint">mín. 3 caracteres</span>
+    </label>
+    <div class="field__control">
+      <span class="field__sigil" aria-hidden="true">&gt;</span>
+      <input
+        id="reg-user"
+        class="input"
+        [class.is-invalid]="showError('username')"
+        type="text"
+        formControlName="username"
+        autocomplete="username"
+        placeholder="tu.usuario"
+        [attr.aria-invalid]="showError('username')"
+        aria-describedby="reg-user-error"
+      />
+    </div>
+    @if (showError('username')) {
+      <p class="field__error" id="reg-user-error">
+        @if (username.hasError('required')) {
+          El usuario es obligatorio.
+        } @else {
+          Mínimo 3 caracteres.
+        }
+      </p>
+    }
+  </div>
+
+  <div class="field">
+    <label class="field__label" for="reg-pass">
+      Contraseña
+      <span class="field__hint">mín. 4 caracteres</span>
+    </label>
+    <div class="field__control">
+      <span class="field__sigil" aria-hidden="true">*</span>
+      <input
+        id="reg-pass"
+        class="input input--password"
+        [class.is-invalid]="showError('password')"
+        [type]="revealed() ? 'text' : 'password'"
+        formControlName="password"
+        autocomplete="new-password"
+        placeholder="••••••••"
+        [attr.aria-invalid]="showError('password')"
+        aria-describedby="reg-pass-error"
+      />
+      <button type="button" class="field__reveal" (click)="revealed.set(!revealed())">
+        {{ revealed() ? 'ocultar' : 'ver' }}
+      </button>
+    </div>
+
+    <div class="meter" [attr.data-score]="strength().score">
+      <span class="meter__bars" aria-hidden="true">
+        @for (bar of [1, 2, 3, 4]; track bar) {
+          <i [class.is-on]="strength().score >= bar"></i>
+        }
+      </span>
+      <span class="meter__label">fuerza: {{ strength().label }}</span>
+    </div>
+
+    @if (showError('password')) {
+      <p class="field__error" id="reg-pass-error">
+        @if (password.hasError('required')) {
+          La contraseña es obligatoria.
+        } @else {
+          Mínimo 4 caracteres.
+        }
+      </p>
+    }
+  </div>
+
+  <div class="field">
+    <label class="field__label" for="reg-pass2">Repetir contraseña</label>
+    <div class="field__control">
+      <span class="field__sigil" aria-hidden="true">*</span>
+      <input
+        id="reg-pass2"
+        class="input input--password"
+        [class.is-invalid]="showError('passwordConfirm') || showMismatch()"
+        [type]="revealed() ? 'text' : 'password'"
+        formControlName="passwordConfirm"
+        autocomplete="new-password"
+        placeholder="••••••••"
+        aria-describedby="reg-pass2-error"
+      />
+    </div>
+    @if (showError('passwordConfirm')) {
+      <p class="field__error" id="reg-pass2-error">Repetí la contraseña.</p>
+    } @else if (showMismatch()) {
+      <p class="field__error" id="reg-pass2-error">Las contraseñas no coinciden.</p>
+    }
+  </div>
+
+  <label class="check">
+    <input type="checkbox" formControlName="terms" />
+    <span>Acepto que esto es un entorno de práctica y los datos son de prueba.</span>
+  </label>
+  @if (showError('terms')) {
+    <p class="field__error">Hay que aceptar para continuar.</p>
+  }
+
+  <button type="submit" class="btn btn--primary" [disabled]="loading()">
+    @if (loading()) {
+      <span class="dots">Creando</span>
+    } @else {
+      Crear cuenta &#9656;
+    }
+  </button>
+</form>
+
+<div class="rule">o</div>
+
+<a class="btn btn--ghost btn--block" routerLink="/auth/login"> Ya tengo cuenta, entrar </a>

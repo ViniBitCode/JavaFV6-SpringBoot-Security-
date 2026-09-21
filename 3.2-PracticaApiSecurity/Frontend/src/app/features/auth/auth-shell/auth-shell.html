@@ -1,0 +1,68 @@
+<main class="auth">
+  <section class="window">
+    <header class="window__bar">
+      <span class="window__dots" aria-hidden="true"> <i></i><i></i><i></i> </span>
+
+      <h1 class="window__title">sec&#8209;admin&nbsp;//&nbsp;consola de acceso</h1>
+
+      <button
+        type="button"
+        class="window__theme"
+        (click)="themeStore.toggle()"
+        [attr.aria-pressed]="themeStore.theme() === 'dark'"
+      >
+        {{ themeStore.theme() === 'dark' ? '☾ noche' : '☀ día' }}
+      </button>
+    </header>
+
+    <div class="window__body">
+      <aside class="brand">
+        <p class="eyebrow">Práctica · Spring Boot + Angular</p>
+
+        <p class="brand__mark">
+          SEC<span class="brand__slash">//</span>ADMIN
+          <span class="brand__caret" aria-hidden="true"></span>
+        </p>
+
+        <p class="brand__lead">
+          Panel de administración de usuarios, roles y permisos. Un acceso por rol, un rol por
+          conjunto de permisos.
+        </p>
+
+        <pre class="brand__tree" aria-hidden="true">
+USUARIO
+ └─ ROL
+     ├─ PERMISO :: READ
+     ├─ PERMISO :: CREATE
+     └─ PERMISO :: DELETE</pre>
+
+        <ul class="brand__facts">
+          <li><span>API</span> Spring Security + JWT</li>
+          <li><span>UI</span> Angular 22 · zoneless</li>
+          <li><span>ESTADO</span> maqueta sin backend</li>
+        </ul>
+      </aside>
+
+      <div class="panel">
+        <nav class="tabs" aria-label="Acceso">
+          <a class="tab" routerLink="/auth/login" routerLinkActive="tab--active">
+            <span class="tab__num">01</span> Iniciar sesión
+          </a>
+          <a class="tab" routerLink="/auth/register" routerLinkActive="tab--active">
+            <span class="tab__num">02</span> Crear cuenta
+          </a>
+        </nav>
+
+        <div class="panel__body">
+          <router-outlet />
+        </div>
+      </div>
+    </div>
+
+    <footer class="window__status">
+      <span class="window__led" aria-hidden="true"></span>
+      <span>localhost:8080/api — sin conectar</span>
+      <span class="window__status-end">v0.1.0</span>
+    </footer>
+  </section>
+</main>

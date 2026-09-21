@@ -1,0 +1,146 @@
+<main class="panel">
+  <section class="window">
+    <header class="window__bar">
+      <span class="window__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <h1 class="window__title">sec&#8209;admin&nbsp;//&nbsp;panel</h1>
+      <button
+        type="button"
+        class="window__theme"
+        (click)="themeStore.toggle()"
+        [attr.aria-pressed]="themeStore.theme() === 'dark'"
+      >
+        {{ themeStore.theme() === 'dark' ? '☾ noche' : '☀ día' }}
+      </button>
+    </header>
+
+    <div class="toolbar">
+      <div class="toolbar__who">
+        <p class="eyebrow">Sesión activa</p>
+        <p class="toolbar__user">
+          {{ auth.username() }}
+          <span class="rol rol--propio">{{ auth.role() }}</span>
+        </p>
+      </div>
+      <div class="toolbar__actions">
+        <button type="button" class="btn" (click)="cargar()" [disabled]="loading()">
+          Actualizar
+        </button>
+        <button type="button" class="btn" (click)="logout()">Cerrar sesión</button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content__head">
+        <h2 class="content__title">Usuarios</h2>
+        <span class="content__count">
+          {{ lista().length }} {{ lista().length === 1 ? 'registro' : 'registros' }}
+        </span>
+      </div>
+
+      @if (aviso(); as mensaje) {
+        <p class="alert alert--ok" role="status">
+          <span class="alert__mark" aria-hidden="true">+</span>
+          <span>{{ mensaje }}</span>
+        </p>
+      }
+
+      @if (error(); as mensaje) {
+        <p class="alert" role="alert">
+          <span class="alert__mark" aria-hidden="true">!</span>
+          <span>{{ mensaje }}</span>
+        </p>
+        @if (sesionCaida()) {
+          <div class="estado__acciones">
+            <button type="button" class="btn" (click)="logout()">Volver al login</button>
+          </div>
+        }
+      }
+
+      @if (loading() && lista().length === 0) {
+        <p class="estado"><span class="dots">Consultando el backend</span></p>
+      } @else if (lista().length === 0) {
+        @if (!error()) {
+          <p class="estado">No hay usuarios cargados todavía.</p>
+        } @else {
+          <div class="estado__acciones">
+            <button type="button" class="btn" (click)="cargar()">Reintentar</button>
+          </div>
+        }
+      } @else {
+        <div class="tabla__scroll">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Rol</th>
+                <!-- La columna solo existe para el admin. Es comodidad, no seguridad:
+                     el candado real es el @PreAuthorize del backend. -->
+                @if (auth.isAdmin()) {
+                  <th scope="col" class="tabla__acciones-col">
+                    <span class="sr-only">Acciones</span>
+                  </th>
+                }
+              </tr>
+            </thead>
+            <tbody>
+              @for (usuario of lista(); track usuario.username; let i = $index) {
+                <tr [class.tabla__fila--yo]="usuario.username === auth.username()">
+                  <td class="tabla__num">{{ i + 1 }}</td>
+                  <td>
+                    {{ usuario.username }}
+                    @if (usuario.username === auth.username()) {
+                      <span class="tag">vos</span>
+                    }
+                  </td>
+                  <td>
+                    <span class="rol">{{ usuario.role }}</span>
+                  </td>
+
+                  @if (auth.isAdmin()) {
+                    <td class="tabla__acciones">
+                      @if (usuario.username === auth.username()) {
+                        <!-- El backend igual lo rechaza con 409; acá ni lo ofrecemos. -->
+                        <span class="tabla__nota">—</span>
+                      } @else if (borrando() === usuario.username) {
+                        <span class="dots tabla__nota">borrando</span>
+                      } @else if (porConfirmar() === usuario.username) {
+                        <span class="confirm">
+                          <span class="confirm__texto">¿Seguro?</span>
+                          <button
+                            type="button"
+                            class="confirm__si"
+                            (click)="borrar(usuario.username)"
+                          >
+                            Sí, borrar
+                          </button>
+                          <button type="button" class="confirm__no" (click)="cancelar()">No</button>
+                        </span>
+                      } @else {
+                        <button
+                          type="button"
+                          class="borrar"
+                          (click)="pedirConfirmacion(usuario.username)"
+                          [attr.aria-label]="'Eliminar el usuario ' + usuario.username"
+                          title="Eliminar usuario"
+                        >
+                          ✕
+                        </button>
+                      }
+                    </td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+    </div>
+
+    <footer class="window__status">
+      <span class="window__led" aria-hidden="true"></span>
+      <span>GET /panel</span>
+      <span class="window__status-end">v0.1.0</span>
+    </footer>
+  </section>
+</main>

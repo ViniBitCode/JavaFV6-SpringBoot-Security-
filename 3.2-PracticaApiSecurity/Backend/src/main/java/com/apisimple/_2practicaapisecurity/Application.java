@@ -1,8 +1,7 @@
-package com.apisimple._apiconsecurity;
+package com.apisimple._2practicaapisecurity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.access.prepost.PreAuthorize;
 
 @SpringBootApplication
 public class Application {
