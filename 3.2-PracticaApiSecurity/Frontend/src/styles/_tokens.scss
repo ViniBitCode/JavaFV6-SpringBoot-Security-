@@ -1,0 +1,81 @@
+/* -------------------------------------------------------------------------
+ * Paleta retro de bajo contraste.
+ * Todo son custom properties para que los componentes las usen con var(--x)
+ * sin necesidad de importar nada (los .scss de componente quedan aislados).
+ * ---------------------------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+
+  /* superficies: papel envejecido */
+  --bg: #e6e0d2;
+  --bg-grid: #d5cdba;
+  --surface: #f1ece0;
+  --surface-2: #e9e2d1;
+  --surface-3: #ddd5c1;
+
+  /* tinta: marrones suaves, nunca negro puro */
+  --ink: #3f3a31;
+  --ink-2: #6b6355;
+  --ink-3: #8f8676;
+
+  /* trazos */
+  --line: #c8bea8;
+  --line-strong: #a89c81;
+
+  /* acentos desaturados */
+  --accent: #5f8a7d;
+  --accent-hover: #547d70;
+  --accent-ink: #f3efe4;
+  --accent-soft: #d4e0da;
+  --amber: #b5894b;
+  --amber-soft: #ecdfc6;
+  --danger: #a3634f;
+  --danger-soft: #eedad2;
+
+  /* sombras duras, sin blur: el truco visual de toda la interfaz */
+  --shadow-sm: 2px 2px 0 var(--line-strong);
+  --shadow: 4px 4px 0 var(--line-strong);
+  --shadow-lg: 8px 8px 0 rgba(112, 101, 80, 0.28);
+
+  --radius: 3px;
+
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --font-sans: 'IBM Plex Sans', system-ui, 'Segoe UI', sans-serif;
+
+  --step-1: 0.75rem;
+  --step-2: 0.875rem;
+  --step-3: 1rem;
+  --step-4: 1.25rem;
+  --step-5: 1.75rem;
+
+  --ease: cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #201d18;
+  --bg-grid: #2b2721;
+  --surface: #2a2620;
+  --surface-2: #322d26;
+  --surface-3: #39332a;
+
+  --ink: #ded3bd;
+  --ink-2: #ab9f8a;
+  --ink-3: #85795f;
+
+  --line: #4b4337;
+  --line-strong: #635947;
+
+  --accent: #7fa79a;
+  --accent-hover: #8fb5a8;
+  --accent-ink: #1d211f;
+  --accent-soft: #33403a;
+  --amber: #cfa261;
+  --amber-soft: #3a3226;
+  --danger: #c0806a;
+  --danger-soft: #3a2b25;
+
+  --shadow-lg: 8px 8px 0 rgba(0, 0, 0, 0.32);
+}

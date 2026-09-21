@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/2-ApiNormal/2-BackendSimple/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/3-ApiConSecurity/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/3.1-ApiConOAuth2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/3.2-PracticaApiSecurity/Backend/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/3.2-PracticaApiSecurity/src/main/java" charset="UTF-8" />
+  </component>
+</project>

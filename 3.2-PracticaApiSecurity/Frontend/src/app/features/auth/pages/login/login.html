@@ -1,0 +1,112 @@
+<header class="head">
+  <p class="eyebrow">01 · Acceso</p>
+  <h2 class="head__title">Volvé a entrar</h2>
+  <p class="head__lead">Usá tus credenciales para retomar la sesión.</p>
+</header>
+
+<!--
+  [formGroup] ata este <form> al FormGroup de la clase.
+  (ngSubmit) se dispara con el botón type="submit" o con Enter, y Angular
+  ya frena el submit nativo del navegador (no hace falta preventDefault).
+-->
+<form class="form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  @if (recienCreado) {
+    <p class="alert alert--ok" role="status">
+      <span class="alert__mark" aria-hidden="true">+</span>
+      <span
+        >Cuenta <strong>{{ recienCreado }}</strong> creada. Entrá con tu contraseña.</span
+      >
+    </p>
+  }
+
+  @if (serverError(); as error) {
+    <p class="alert" role="alert">
+      <span class="alert__mark" aria-hidden="true">!</span>
+      <span>{{ error }}</span>
+    </p>
+  }
+
+  <div class="field">
+    <label class="field__label" for="login-user">
+      Usuario
+      <span class="field__hint">el de la tabla usuarios</span>
+    </label>
+    <div class="field__control">
+      <span class="field__sigil" aria-hidden="true">&gt;</span>
+      <!-- formControlName="username" enlaza este input con el control del mismo nombre -->
+      <input
+        id="login-user"
+        class="input"
+        [class.is-invalid]="showError('username')"
+        type="text"
+        formControlName="username"
+        autocomplete="username"
+        placeholder="admin"
+        [attr.aria-invalid]="showError('username')"
+        aria-describedby="login-user-error"
+      />
+    </div>
+    @if (showError('username')) {
+      <p class="field__error" id="login-user-error">
+        @if (username.hasError('required')) {
+          El usuario es obligatorio.
+        } @else {
+          Mínimo 3 caracteres.
+        }
+      </p>
+    }
+  </div>
+
+  <div class="field">
+    <label class="field__label" for="login-pass">
+      Contraseña
+      <a class="field__hint field__link" href="#">¿la olvidaste?</a>
+    </label>
+    <div class="field__control">
+      <span class="field__sigil" aria-hidden="true">*</span>
+      <input
+        id="login-pass"
+        class="input input--password"
+        [class.is-invalid]="showError('password')"
+        [type]="revealed() ? 'text' : 'password'"
+        formControlName="password"
+        autocomplete="current-password"
+        placeholder="••••••••"
+        [attr.aria-invalid]="showError('password')"
+        aria-describedby="login-pass-error"
+      />
+      <button type="button" class="field__reveal" (click)="revealed.set(!revealed())">
+        {{ revealed() ? 'ocultar' : 'ver' }}
+      </button>
+    </div>
+    @if (showError('password')) {
+      <p class="field__error" id="login-pass-error">
+        @if (password.hasError('required')) {
+          La contraseña es obligatoria.
+        } @else {
+          Mínimo 4 caracteres.
+        }
+      </p>
+    }
+  </div>
+
+  <label class="check">
+    <input type="checkbox" formControlName="remember" />
+    <span>Mantener la sesión abierta en este equipo</span>
+  </label>
+
+  <!-- El botón se bloquea mientras dura la petición para no mandarla dos veces -->
+  <button type="submit" class="btn btn--primary" [disabled]="loading()">
+    @if (loading()) {
+      <span class="dots">Verificando</span>
+    } @else {
+      Entrar &#9656;
+    }
+  </button>
+
+  <p class="form__note">Al entrar se cargan los roles y permisos asociados a tu usuario.</p>
+</form>
+
+<div class="rule">o</div>
+
+<a class="btn btn--ghost btn--block" routerLink="/auth/register"> Crear una cuenta nueva </a>

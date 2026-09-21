@@ -4,89 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/controller/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/controller/PermissionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/controller/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/controller/basicos/CalificationsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/controller/basicos/HolaMundo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/dto/AuthLoginRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/dto/AuthResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/model/Permission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/model/UserSecurity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/repository/IPermissionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/repository/IRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/repository/IUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/security/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/security/config/filter/JwtTokenValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/service/IPermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/service/IRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/service/PermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/service/UserDetailsServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/utils/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/test/java/com/apisimple/_apiconsecurity/ApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/src/main/java/com/apisimple/_1apiconoauth2/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/src/main/java/com/apisimple/_1apiconoauth2/Controller/BasicController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/src/main/java/com/apisimple/_1apiconoauth2/Security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3.1-ApiConOAuth2/src/test/java/com/apisimple/_1apiconoauth2/ApplicationTests.java" afterDir="false" />
+    <list default="true" id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="creacion de usuario">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ProyectosJava.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/2-ApiNormal/2-BackendSimple/src/main/java/com/apisimple/_backendsimple/service/IMascotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-ApiNormal/2-BackendSimple/src/main/java/com/apisimple/_backendsimple/service/IMascotaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/.vscode/mcp.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/app.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/app.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/core/api.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/core/persona.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/core/persona.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/features/personas/personas.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/features/personas/personas.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/features/personas/personas.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/app/features/personas/personas.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/src/styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/frontend/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/PermissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/UserSecController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/EntidadNoEncontradaException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/NoHayEntidadesException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/RolNoTienePermisosException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/ValorYaExisteException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/Permission.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/UserSecurity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/PermissionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/UserSecurityRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/securityConfig/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/PermissionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/PermissionServiceImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/RoleService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/RoleServiceImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/UserSecImp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/UserSecService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/test-classes/com/apisimple/_2practicaapisecurity/ApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="221" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,6 +54,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Exception" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -117,62 +77,65 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2832209713239497" />
-      <entry key="MS500" value="1.7770073403575564" />
-      <entry key="S2" value="1.9560047521237698" />
-      <entry key="S5" value="2.258884132636481" />
-      <entry key="S10" value="2.9217208496649842" />
-      <entry key="S30" value="5.015369729504941" />
-      <entry key="S60" value="6.886990297235532" />
-      <entry key="M2" value="9.168496513254262" />
-      <entry key="M5" value="18.77796038396798" />
-      <entry key="M10" value="36.41724752638338" />
-      <entry key="M15" value="51.36235193512473" />
-      <entry key="M30" value="91.34629731658725" />
-      <entry key="H1" value="170.45686494626955" />
-      <entry key="H2" value="293.047233252534" />
-      <entry key="H4" value="417.86769749500036" />
-      <entry key="D1" value="588.2063600561535" />
-      <entry key="W1" value="626.3347856018335" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="4.291362677056871E-113" />
+      <entry key="S5" value="1.7082277644107803E-45" />
+      <entry key="S10" value="6.608917256892309E-23" />
+      <entry key="S30" value="8.476415558065016E-8" />
+      <entry key="S60" value="6.029515403517295E-4" />
+      <entry key="M2" value="0.06582146790703433" />
+      <entry key="M5" value="1.6727677616228476" />
+      <entry key="M10" value="7.518128949138508" />
+      <entry key="M15" value="15.8550778036062" />
+      <entry key="M30" value="45.10640662448813" />
+      <entry key="H1" value="100.14892043292306" />
+      <entry key="H2" value="212.23783787958888" />
+      <entry key="H4" value="395.1929351547526" />
+      <entry key="D1" value="788.2062119992714" />
+      <entry key="W1" value="901.251667593746" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="4.803169286329931E-28" />
-      <entry key="MS500" value="3.437997823515478E-6" />
-      <entry key="S2" value="0.04368251966278147" />
-      <entry key="S5" value="0.3434732066802824" />
-      <entry key="S10" value="0.8991009661987253" />
-      <entry key="S30" value="2.7981347976188404" />
-      <entry key="S60" value="4.4551449897017275" />
-      <entry key="M2" value="6.30075648694449" />
-      <entry key="M5" value="13.168884938510473" />
-      <entry key="M10" value="25.903720239557043" />
-      <entry key="M15" value="37.237456625002785" />
-      <entry key="M30" value="68.96527192505552" />
-      <entry key="H1" value="130.77668447361182" />
-      <entry key="H2" value="221.45817262705404" />
-      <entry key="H4" value="310.4627832473212" />
-      <entry key="D1" value="429.14101186682944" />
-      <entry key="W1" value="455.4156203229748" />
+      <entry key="MS100" value="1.000000000000151" />
+      <entry key="MS500" value="1.0027278877587253" />
+      <entry key="S2" value="1.228537053740998" />
+      <entry key="S5" value="1.5540929822060732" />
+      <entry key="S10" value="1.7443742218844451" />
+      <entry key="S30" value="1.906283050239109" />
+      <entry key="S60" value="1.9530122743986607" />
+      <entry key="M2" value="2.064738034665048" />
+      <entry key="M5" value="3.8877045632060656" />
+      <entry key="M10" value="9.128534862094057" />
+      <entry key="M15" value="15.425128448142964" />
+      <entry key="M30" value="36.19354806516737" />
+      <entry key="H1" value="76.59742893898826" />
+      <entry key="H2" value="161.87915271815865" />
+      <entry key="H4" value="299.54176549818993" />
+      <entry key="D1" value="588.7925117580138" />
+      <entry key="W1" value="670.9569065672963" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.28917485792169784" />
-      <entry key="MS500" value="0.8578347751645278" />
-      <entry key="S2" value="1.4933901965895826" />
-      <entry key="S5" value="2.2279284420815864" />
-      <entry key="S10" value="3.5090434528322403" />
-      <entry key="S30" value="7.578769832846772" />
-      <entry key="S60" value="11.159472457356584" />
-      <entry key="M2" value="15.34211602440772" />
-      <entry key="M5" value="31.848772161434752" />
-      <entry key="M10" value="62.229361725081226" />
-      <entry key="M15" value="88.51475416923137" />
-      <entry key="M30" value="160.2371002174508" />
-      <entry key="H1" value="301.1664559194384" />
-      <entry key="H2" value="514.4505612044835" />
-      <entry key="H4" value="728.292761187909" />
-      <entry key="D1" value="1017.3388173317925" />
-      <entry key="W1" value="1081.7491124106452" />
+      <entry key="MS100" value="1.4944767724409905E-5" />
+      <entry key="MS500" value="0.10844585600027849" />
+      <entry key="S2" value="0.667928112412788" />
+      <entry key="S5" value="1.1894020333758943" />
+      <entry key="S10" value="1.5182691973760314" />
+      <entry key="S30" value="1.8179121388637913" />
+      <entry key="S60" value="1.9075309228927448" />
+      <entry key="M2" value="2.106280661921228" />
+      <entry key="M5" value="5.5432381530099875" />
+      <entry key="M10" value="16.62493302967526" />
+      <entry key="M15" value="31.253509378214996" />
+      <entry key="M30" value="81.26500333256763" />
+      <entry key="H1" value="176.70802574433253" />
+      <entry key="H2" value="374.0766877376739" />
+      <entry key="H4" value="694.6979203368618" />
+      <entry key="D1" value="1376.98686672891" />
+      <entry key="W1" value="1572.2066496450523" />
     </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8,
@@ -189,6 +152,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Maven.3-2-PracticaApiSecurity [clean].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
@@ -203,7 +167,7 @@
     &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new-projects&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -226,7 +190,11 @@
   <component name="RubyModuleManagerSettings">
     <option name="blackListedRootsPaths">
       <list>
+        <option value="$PROJECT_DIR$/2-ApiNormal/2-BackendSimple" />
+        <option value="$PROJECT_DIR$/3.1-ApiConOAuth2" />
         <option value="$PROJECT_DIR$/3.2-PracticaApiSecurity" />
+        <option value="$PROJECT_DIR$" />
+        <option value="$PROJECT_DIR$/3-ApiConSecurity" />
       </list>
     </option>
   </component>
@@ -238,6 +206,19 @@
         <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
+    </option>
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <set>
+              <option value="Application" />
+              <option value="Application (1)" />
+              <option value="Application (2)" />
+            </set>
+          </value>
+        </entry>
+      </map>
     </option>
     <option name="configurationStatuses">
       <map>
@@ -271,7 +252,7 @@
     <configuration name="Application (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="DB_PASSWORD" value="290703" />
-        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/3.1.PracticaConSecurity" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/3.2.PracticaConSecurity" />
         <env name="DB_USER" value="postgres" />
         <env name="SS_PASSWORD" value="1234" />
         <env name="SS_USER" value="facuvini" />
@@ -317,6 +298,31 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="creacion de usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="creacion de usuario" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanDefinitionStoreException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
