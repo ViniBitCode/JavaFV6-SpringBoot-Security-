@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="creacion de usuario">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/3.2-PracticaApiSecurity/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/Backend/src/main/java/com/apisimple/_2practicaapisecurity/securityConfig/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/3.2-PracticaApiSecurity/Backend/src/main/java/com/apisimple/_2practicaapisecurity/securityConfig/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/Frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/3.2-PracticaApiSecurity/Frontend/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,61 +48,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="2.3810017884399606E-6" />
-      <entry key="MS500" value="0.07799831181259226" />
-      <entry key="S2" value="0.7564209914608425" />
-      <entry key="S5" value="1.330265345264466" />
-      <entry key="S10" value="1.6258214708947685" />
-      <entry key="S30" value="1.8652144236231976" />
-      <entry key="S60" value="1.931256182760168" />
-      <entry key="M2" value="1.9653647256989162" />
-      <entry key="M5" value="2.108567456325203" />
-      <entry key="M10" value="3.4694174858383717" />
-      <entry key="M15" value="5.896898128111437" />
-      <entry key="M30" value="18.905464539477347" />
-      <entry key="H1" value="59.353817825578446" />
-      <entry key="H2" value="159.9817520202647" />
-      <entry key="H4" value="343.0171902346715" />
-      <entry key="D1" value="781.2729850138185" />
-      <entry key="W1" value="915.1290488844717" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.33126207E-315" />
+      <entry key="S5" value="2.086744548023614E-126" />
+      <entry key="S10" value="2.036284050824332E-63" />
+      <entry key="S30" value="2.0105610593204085E-21" />
+      <entry key="S60" value="6.340655210859542E-11" />
+      <entry key="M2" value="1.1261345489557491E-5" />
+      <entry key="M5" value="0.016875099782369587" />
+      <entry key="M10" value="0.31037446794603507" />
+      <entry key="M15" value="1.1795324917105545" />
+      <entry key="M30" value="8.455328689608026" />
+      <entry key="H1" value="39.69357635744553" />
+      <entry key="H2" value="130.82966640864137" />
+      <entry key="H4" value="310.1942748147762" />
+      <entry key="D1" value="768.2851806986422" />
+      <entry key="W1" value="912.9401162328288" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.015625" />
-      <entry key="MS500" value="1.435275281648062" />
-      <entry key="S2" value="1.8122523963562356" />
-      <entry key="S5" value="1.9201876506248752" />
-      <entry key="S10" value="1.9592641193252645" />
-      <entry key="S30" value="1.9862327044933592" />
-      <entry key="S60" value="1.993092495437036" />
-      <entry key="M2" value="1.9965402630642843" />
-      <entry key="M5" value="1.9990250765992204" />
-      <entry key="M10" value="2.0930986362800867" />
-      <entry key="M15" value="2.7285542293218055" />
-      <entry key="M30" value="9.868149604126621" />
-      <entry key="H1" value="37.71411463220254" />
-      <entry key="H2" value="112.53612761090605" />
-      <entry key="H4" value="249.52217335188158" />
-      <entry key="D1" value="572.3678928357468" />
-      <entry key="W1" value="669.9164957777879" />
+      <entry key="MS100" value="1.0000000000992597" />
+      <entry key="MS500" value="1.0099851512750238" />
+      <entry key="S2" value="1.316110311116324" />
+      <entry key="S5" value="1.6308635926980792" />
+      <entry key="S10" value="1.7942692192815222" />
+      <entry key="S30" value="1.9260957919092259" />
+      <entry key="S60" value="1.9623387096210827" />
+      <entry key="M2" value="1.9810000788296982" />
+      <entry key="M5" value="2.008350058383064" />
+      <entry key="M10" value="2.1834173119976192" />
+      <entry key="M15" value="2.5432255972186706" />
+      <entry key="M30" value="6.412177855838362" />
+      <entry key="H1" value="27.221126130192854" />
+      <entry key="H2" value="94.02932632807263" />
+      <entry key="H4" value="227.6455272628877" />
+      <entry key="D1" value="564.8528793147022" />
+      <entry key="W1" value="670.3140927304229" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.016291074310546685" />
-      <entry key="MS500" value="0.5418854338121495" />
-      <entry key="S2" value="1.904499437104467" />
-      <entry key="S5" value="2.872636572145099" />
-      <entry key="S10" value="3.3680395476274856" />
-      <entry key="S30" value="3.7715330993420437" />
-      <entry key="S60" value="3.8833487564461406" />
-      <entry key="M2" value="3.941136312923273" />
-      <entry key="M5" value="4.09919638033536" />
-      <entry key="M10" value="5.557973502172799" />
-      <entry key="M15" value="8.621206933992013" />
-      <entry key="M30" value="28.764408278665126" />
-      <entry key="H1" value="97.04920811845372" />
-      <entry key="H2" value="272.4899143098523" />
-      <entry key="H4" value="592.5087429795203" />
-      <entry key="D1" value="1353.629353130973" />
-      <entry key="W1" value="1585.0436233154312" />
+      <entry key="MS100" value="1.3191791628958494E-5" />
+      <entry key="MS500" value="0.10897673706650257" />
+      <entry key="S2" value="0.8095020774459547" />
+      <entry key="S5" value="1.3631451337118392" />
+      <entry key="S10" value="1.6449914424168137" />
+      <entry key="S30" value="1.8723117634606166" />
+      <entry key="S60" value="1.9349004646568506" />
+      <entry key="M2" value="1.9671520637225215" />
+      <entry key="M5" value="2.019580235594132" />
+      <entry key="M10" value="2.4905908172303266" />
+      <entry key="M15" value="3.7200445681820544" />
+      <entry key="M30" value="14.862456490439651" />
+      <entry key="H1" value="66.90171380194643" />
+      <entry key="H2" value="224.83588997342602" />
+      <entry key="H4" value="537.8119948510518" />
+      <entry key="D1" value="1333.1267074341743" />
+      <entry key="W1" value="1583.252289434083" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -228,11 +228,9 @@
     </configuration>
     <configuration name="Application (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
-        <env name="DB_PASSWORD" value="290703" />
-        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/3.2.PracticaConSecurity" />
-        <env name="DB_USER" value="postgres" />
-        <env name="SS_PASSWORD" value="1234" />
-        <env name="SS_USER" value="facuvini" />
+        <env name="DB_PASSWORD" value="npg_rtGH61nXiqUQ" />
+        <env name="DB_URL" value="jdbc:postgresql://ep-nameless-meadow-acpykj38-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&amp;channel_binding=require" />
+        <env name="DB_USER" value="neondb_owner" />
       </envs>
       <module name="3-2-PracticaApiSecurity" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._2practicaapisecurity.Application" />
