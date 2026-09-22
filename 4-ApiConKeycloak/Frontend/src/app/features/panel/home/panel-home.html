@@ -1,0 +1,25 @@
+<section class="home">
+  <header class="home__head">
+    <p class="mono-eyebrow">Área privada</p>
+    <h1 class="home__title">
+      Hola,
+      <span class="home__name">{{ usuario()?.username ?? 'usuario' }}</span>
+    </h1>
+    <p class="home__lead">
+      Entraste con una sesión válida. Este panel es el punto de partida: las próximas secciones
+      viven en <code>features/panel</code> y se agregan como rutas hijas del layout.
+    </p>
+  </header>
+
+  <ul class="home__grid">
+    @for (dato of resumen(); track dato.etiqueta) {
+      <li class="card home__tile">
+        <div class="home__tile-body">
+          <p class="mono-eyebrow">{{ dato.etiqueta }}</p>
+          <p class="home__value">{{ dato.valor }}</p>
+          <p class="home__detail">{{ dato.detalle }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>

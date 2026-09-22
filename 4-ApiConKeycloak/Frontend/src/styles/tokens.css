@@ -1,0 +1,219 @@
+/* ============================================================================
+   TOKENS DE DISEÑO — única fuente de verdad de la estética retro-moderna.
+   Paleta, tipografías, espaciado, radios, sombras y transiciones.
+
+   El tema tiene tres estados:
+     1. "system"  -> no hay atributo data-theme en <html>; manda prefers-color-scheme.
+     2. "light"   -> <html data-theme="light">
+     3. "dark"    -> <html data-theme="dark">
+
+   Por eso los valores oscuros aparecen en DOS bloques (media query + atributo).
+   Si tocás uno, tocá el otro: deben quedar sincronizados.
+   ========================================================================== */
+
+:root {
+  /* ---------- Tipografías ---------- */
+  /* Display: solo para logo y títulos. Es el guiño retro (aire 80/90). */
+  --font-display: 'Orbitron', 'Trebuchet MS', 'Arial Black', sans-serif;
+  /* UI: legibilidad moderna para todo el resto. */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Mono', 'Consolas', 'Courier New', monospace;
+
+  --text-2xs: 0.6875rem; /* 11px */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.55;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.14em;
+
+  /* ---------- Espaciado (base 4px) ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ---------- Radios ---------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+
+  /* ---------- Movimiento ---------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --transition-fast: 120ms var(--ease);
+  --transition: 200ms var(--ease);
+  --transition-slow: 360ms var(--ease);
+
+  /* ---------- Capas ---------- */
+  --z-background: 0;
+  --z-content: 1;
+  --z-overlay: 10;
+
+  /* ---------- Medidas ---------- */
+  --card-max-width: 27rem;
+  --content-max-width: 68rem;
+
+  /* =========================================================
+     PALETA — MODO CLARO (por defecto)
+     Base neutra cálida tipo papel + acentos saturados retro.
+     ======================================================= */
+  color-scheme: light;
+
+  --c-bg: #f2eee4;
+  --c-bg-deep: #e7e1d3;
+  --c-surface: #fffdf9;
+  --c-surface-2: #f6f2e9;
+  --c-surface-inset: #ece7db;
+
+  --c-border: #dcd4c2;
+  --c-border-strong: #bdb29a;
+
+  --c-text: #191722;
+  --c-text-muted: #56525f;
+  --c-text-subtle: #7d788a;
+  --c-text-on-accent: #ffffff;
+
+  /* Acentos: magenta + cian + ámbar + violeta */
+  --c-accent: #c9145c;
+  --c-accent-hover: #a90f4c;
+  --c-accent-soft: #fde4ee;
+  --c-accent-ring: rgba(201, 20, 92, 0.32);
+
+  --c-cyan: #0d7490;
+  --c-amber: #b45309;
+  --c-violet: #6d28d9;
+
+  --c-success: #0f7a3d;
+  --c-success-soft: #e2f6e9;
+  --c-danger: #b91c1c;
+  --c-danger-soft: #fdeaea;
+  --c-warning: #a16207;
+  --c-warning-soft: #fdf3dc;
+
+  /* Fondo decorativo: grilla + resplandores */
+  --c-grid-line: rgba(25, 23, 34, 0.08);
+  --c-glow-1: rgba(201, 20, 92, 0.16);
+  --c-glow-2: rgba(13, 116, 144, 0.14);
+  --c-glow-3: rgba(109, 40, 217, 0.1);
+  --c-scanline: rgba(25, 23, 34, 0.018);
+
+  --shadow-sm: 0 1px 2px rgba(25, 23, 34, 0.07);
+  --shadow-md: 0 6px 18px -6px rgba(25, 23, 34, 0.18);
+  --shadow-lg: 0 24px 60px -24px rgba(25, 23, 34, 0.32);
+  /* Borde inferior grueso: detalle retro de las tarjetas */
+  --shadow-card: 0 1px 0 var(--c-border), 0 26px 60px -30px rgba(25, 23, 34, 0.45);
+}
+
+/* =========================================================
+   PALETA — MODO OSCURO (preferencia del sistema)
+   ======================================================= */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --c-bg: #0b0a14;
+    --c-bg-deep: #07060d;
+    --c-surface: #14121f;
+    --c-surface-2: #1b1828;
+    --c-surface-inset: #100e1a;
+
+    --c-border: #2b2740;
+    --c-border-strong: #453f63;
+
+    --c-text: #f3f0ff;
+    --c-text-muted: #b3adcb;
+    --c-text-subtle: #8a84a3;
+    --c-text-on-accent: #14121f;
+
+    --c-accent: #ff4d9d;
+    --c-accent-hover: #ff70b0;
+    --c-accent-soft: rgba(255, 77, 157, 0.14);
+    --c-accent-ring: rgba(255, 77, 157, 0.42);
+
+    --c-cyan: #34d3ee;
+    --c-amber: #ffb340;
+    --c-violet: #a78bfa;
+
+    --c-success: #3ddc84;
+    --c-success-soft: rgba(61, 220, 132, 0.13);
+    --c-danger: #ff6b6b;
+    --c-danger-soft: rgba(255, 107, 107, 0.13);
+    --c-warning: #ffc957;
+    --c-warning-soft: rgba(255, 201, 87, 0.13);
+
+    --c-grid-line: rgba(167, 139, 250, 0.09);
+    --c-glow-1: rgba(255, 77, 157, 0.22);
+    --c-glow-2: rgba(52, 211, 238, 0.16);
+    --c-glow-3: rgba(167, 139, 250, 0.18);
+    --c-scanline: rgba(255, 255, 255, 0.016);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 8px 22px -8px rgba(0, 0, 0, 0.7);
+    --shadow-lg: 0 28px 70px -28px rgba(0, 0, 0, 0.85);
+    --shadow-card: 0 1px 0 var(--c-border), 0 30px 70px -34px rgba(0, 0, 0, 0.95);
+  }
+}
+
+/* =========================================================
+   PALETA — MODO OSCURO (elección explícita del usuario)
+   Copia del bloque anterior: mantener ambos sincronizados.
+   ======================================================= */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --c-bg: #0b0a14;
+  --c-bg-deep: #07060d;
+  --c-surface: #14121f;
+  --c-surface-2: #1b1828;
+  --c-surface-inset: #100e1a;
+
+  --c-border: #2b2740;
+  --c-border-strong: #453f63;
+
+  --c-text: #f3f0ff;
+  --c-text-muted: #b3adcb;
+  --c-text-subtle: #8a84a3;
+  --c-text-on-accent: #14121f;
+
+  --c-accent: #ff4d9d;
+  --c-accent-hover: #ff70b0;
+  --c-accent-soft: rgba(255, 77, 157, 0.14);
+  --c-accent-ring: rgba(255, 77, 157, 0.42);
+
+  --c-cyan: #34d3ee;
+  --c-amber: #ffb340;
+  --c-violet: #a78bfa;
+
+  --c-success: #3ddc84;
+  --c-success-soft: rgba(61, 220, 132, 0.13);
+  --c-danger: #ff6b6b;
+  --c-danger-soft: rgba(255, 107, 107, 0.13);
+  --c-warning: #ffc957;
+  --c-warning-soft: rgba(255, 201, 87, 0.13);
+
+  --c-grid-line: rgba(167, 139, 250, 0.09);
+  --c-glow-1: rgba(255, 77, 157, 0.22);
+  --c-glow-2: rgba(52, 211, 238, 0.16);
+  --c-glow-3: rgba(167, 139, 250, 0.18);
+  --c-scanline: rgba(255, 255, 255, 0.016);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 22px -8px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 28px 70px -28px rgba(0, 0, 0, 0.85);
+  --shadow-card: 0 1px 0 var(--c-border), 0 30px 70px -34px rgba(0, 0, 0, 0.95);
+}

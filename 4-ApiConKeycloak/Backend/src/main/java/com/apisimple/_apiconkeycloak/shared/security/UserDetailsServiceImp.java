@@ -1,7 +1,7 @@
-package com.apisimple._2practicaapisecurity.service;
+package com.apisimple._apiconkeycloak.shared.security;
 
-import com.apisimple._2practicaapisecurity.model.UserSecurity;
-import com.apisimple._2practicaapisecurity.repository.UserSecurityRepository;
+import com.apisimple._apiconkeycloak.user.UserEntity;
+import com.apisimple._apiconkeycloak.user.UserRepository;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -18,22 +18,21 @@ import java.util.List;
 @Service
 public class UserDetailsServiceImp implements UserDetailsService {
 
-    private final UserSecurityRepository userSecurityRepository;
+    private final UserRepository userRepository;
 
-    public UserDetailsServiceImp(UserSecurityRepository userSecurityRepository) {
-        this.userSecurityRepository = userSecurityRepository;
+    public UserDetailsServiceImp(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(@NonNull String username) throws UsernameNotFoundException {
-        UserSecurity usuario = userSecurityRepository.findByUsername(username)
+        UserEntity usuario = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("El usuario " + username + " no existe"));
 
         List<GrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getRole().getRoleName()));
-        usuario.getRole().getPermissionList()
-                .forEach(p -> authorities.add(new SimpleGrantedAuthority(p.getPermissionName())));
+        usuario.getRole().getRolePermissionList().forEach(p -> authorities.add(new SimpleGrantedAuthority(p.getPermissionName())));
 
         return User.builder()
                 .username(usuario.getUsername())

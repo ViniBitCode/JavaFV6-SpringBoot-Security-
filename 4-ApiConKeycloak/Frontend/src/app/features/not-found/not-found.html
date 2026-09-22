@@ -1,0 +1,18 @@
+<div class="nf">
+  <header class="nf__bar">
+    <app-brand />
+    <app-theme-toggle />
+  </header>
+
+  <main class="nf__main">
+    <p class="nf__code" aria-hidden="true">404</p>
+    <p class="mono-eyebrow">Señal perdida</p>
+    <h1 class="nf__title">Esta pantalla no existe</h1>
+    <p class="nf__text">
+      La dirección que escribiste no corresponde a ninguna sección de la app. Puede ser un enlace
+      viejo o un error de tipeo.
+    </p>
+
+    <a class="btn btn--primary nf__cta" [routerLink]="destino">{{ textoDelDestino }}</a>
+  </main>
+</div>

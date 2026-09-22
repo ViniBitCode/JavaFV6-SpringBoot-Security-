@@ -1,0 +1,78 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.panel__bar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: color-mix(in srgb, var(--c-surface) 86%, transparent);
+  border-bottom: 1px solid var(--c-border);
+  backdrop-filter: blur(10px);
+}
+
+.panel__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.panel__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1);
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.panel__avatar {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--c-accent);
+  color: var(--c-text-on-accent);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+}
+
+/* En pantallas chicas el nombre estorba: queda solo el avatar. */
+.panel__chip-text {
+  display: none;
+}
+
+.panel__main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding: var(--space-8) var(--space-4) var(--space-12);
+}
+
+@media (min-width: 40rem) {
+  .panel__bar {
+    padding: var(--space-4) var(--space-6);
+  }
+
+  .panel__chip-text {
+    display: inline;
+  }
+
+  .panel__main {
+    padding-inline: var(--space-6);
+  }
+}

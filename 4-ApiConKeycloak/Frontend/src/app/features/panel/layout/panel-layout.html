@@ -1,0 +1,26 @@
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<div class="panel">
+  <header class="panel__bar">
+    <app-brand />
+
+    <div class="panel__actions">
+      @if (usuario(); as datos) {
+        <span class="panel__chip">
+          <span class="panel__avatar" aria-hidden="true">{{ datos.username.charAt(0) }}</span>
+          <span class="panel__chip-text">{{ datos.username }}</span>
+        </span>
+      }
+
+      <app-theme-toggle />
+
+      <button type="button" class="btn btn--ghost panel__logout" (click)="cerrarSesion()">
+        Cerrar sesión
+      </button>
+    </div>
+  </header>
+
+  <main class="panel__main" id="contenido">
+    <router-outlet />
+  </main>
+</div>

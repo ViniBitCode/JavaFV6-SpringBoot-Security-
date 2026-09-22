@@ -1,0 +1,109 @@
+<app-auth-shell
+  eyebrow="Acceso"
+  title="Iniciar sesión"
+  subtitle="Entrá con tu usuario y contraseña para ver tu panel."
+>
+  @if (aviso(); as mensaje) {
+    <app-alert [tone]="mensaje.tone" class="login__aviso">{{ mensaje.text }}</app-alert>
+  }
+
+  @if (errorDelServidor(); as error) {
+    <app-alert tone="danger" class="login__aviso">{{ error }}</app-alert>
+  }
+
+  <form
+    class="form"
+    [formGroup]="form"
+    (ngSubmit)="enviar()"
+    [attr.aria-busy]="enviando()"
+    novalidate
+  >
+    <!-- Usuario -->
+    <div class="form-row">
+      <div class="field" [class.field--invalid]="tieneError('username')">
+        <input
+          id="login-username"
+          class="field__input"
+          type="text"
+          formControlName="username"
+          placeholder=" "
+          autocomplete="username"
+          autocapitalize="none"
+          spellcheck="false"
+          [attr.aria-invalid]="tieneError('username')"
+          [attr.aria-describedby]="tieneError('username') ? 'login-username-error' : null"
+        />
+        <label class="field__label" for="login-username">Usuario</label>
+      </div>
+
+      @if (tieneError('username')) {
+        <p class="field-error" id="login-username-error">
+          <span class="field-error__mark" aria-hidden="true">!</span>
+          {{ mensajeDeError('username') }}
+        </p>
+      }
+    </div>
+
+    <!-- Contraseña -->
+    <div class="form-row">
+      <div class="field field--with-action" [class.field--invalid]="tieneError('password')">
+        <input
+          id="login-password"
+          class="field__input"
+          [type]="passwordVisible() ? 'text' : 'password'"
+          formControlName="password"
+          placeholder=" "
+          autocomplete="current-password"
+          [attr.aria-invalid]="tieneError('password')"
+          [attr.aria-describedby]="tieneError('password') ? 'login-password-error' : null"
+        />
+        <label class="field__label" for="login-password">Contraseña</label>
+
+        <button
+          type="button"
+          class="field__action"
+          [attr.aria-pressed]="passwordVisible()"
+          [attr.aria-label]="passwordVisible() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+          (click)="alternarPassword()"
+        >
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="field__action-icon">
+            @if (passwordVisible()) {
+              <path
+                d="M2 10s3-5.5 8-5.5S18 10 18 10s-3 5.5-8 5.5S2 10 2 10Zm8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+              />
+            } @else {
+              <path
+                d="M3.3 2.3 2 3.6l2.3 2.3A12.6 12.6 0 0 0 2 10s3 5.5 8 5.5a8.9 8.9 0 0 0 3.6-.75l2.2 2.2 1.3-1.3-13.8-13.35ZM10 13a3 3 0 0 1-2.8-4.1l3.9 3.9c-.34.13-.72.2-1.1.2Zm0-7c5 0 8 5.5 8 5.5a14.4 14.4 0 0 1-1.8 2.4l-1.4-1.4c.5-.5.9-1 1.1-1.3-.8-1-3-3.2-5.9-3.2-.3 0-.6 0-.9.06L7.7 6.2c.74-.13 1.5-.2 2.3-.2Z"
+              />
+            }
+          </svg>
+        </button>
+      </div>
+
+      @if (tieneError('password')) {
+        <p class="field-error" id="login-password-error">
+          <span class="field-error__mark" aria-hidden="true">!</span>
+          {{ mensajeDeError('password') }}
+        </p>
+      }
+    </div>
+
+    <button
+      class="btn btn--primary btn--block"
+      type="submit"
+      [disabled]="form.invalid || enviando()"
+    >
+      @if (enviando()) {
+        <span class="btn__spinner" aria-hidden="true"></span>
+        Ingresando…
+      } @else {
+        Ingresar
+      }
+    </button>
+  </form>
+
+  <p data-footer>
+    ¿Todavía no tenés cuenta?
+    <a routerLink="/register">Creá una ahora</a>
+  </p>
+</app-auth-shell>
