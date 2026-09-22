@@ -22,5 +22,5 @@ Repositorio donde voy subiendo los ejercicios y proyectos de mi camino hacia el 
 | `3.1-ApiConOAuth2` | Login con proveedor externo | OAuth2, login con Google |
 | `3.2-PracticaApiSecurity` | Proyecto integrador: API + frontend desplegados | Seguridad, manejo global de errores, Docker, CORS, deploy |
 
-
+Del proyecto `3.2-PracticaApiSecurity` en adelante, hago una rama aparte para hacerle el Deploy al proyecto. Para saber más acerca de las herramientas de Deploy que uso en estas, dentro de cada rama hay un README donde especifico estos temas.
 
