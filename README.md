@@ -34,4 +34,4 @@ API REST para gestionar usuarios, roles y permisos, protegida con Spring Securit
 ## Extras acerca del proyecto
 - Inclui la dependencia de SpringDoc para documentar todos mis endpoints. No extendi mucho ya que lo hice al final, pero me queda pendiente darle un poco mas de gracia a esta documentacion haciendo uso de esta herramienta.
 - Cree mis propias excepciones para enviar diferentes códigos HTTP al front y que se manejen como deban. Esto lo hice creando mi propia clase que recibe Excepcion.class.
-- Para el Front usé Netlify, para el Back usé Render, y para la BBDD USE Neon. 
+- Para el Front usé Netlify, para el Back usé Render, y para la BBDD usé Neon. 
