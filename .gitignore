@@ -1,0 +1,20 @@
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Java / Maven
+target/
+
+# Angular / Node
+node_modules/
+dist/
+.angular/
+
+# Variables de entorno
+.env
+*.env
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
