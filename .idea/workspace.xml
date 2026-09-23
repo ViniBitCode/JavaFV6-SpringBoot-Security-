@@ -5,39 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="creacion de usuario">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ProyectosJava.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2-ApiNormal/2-BackendSimple/src/main/java/com/apisimple/_backendsimple/service/IMascotaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/2-ApiNormal/2-BackendSimple/src/main/java/com/apisimple/_backendsimple/service/IMascotaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/3-ApiConSecurity/src/main/java/com/apisimple/_apiconsecurity/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/PermissionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/RoleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/controller/UserSecController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/EntidadNoEncontradaException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/NoHayEntidadesException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/RolNoTienePermisosException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/exception/ValorYaExisteException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/Permission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/model/UserSecurity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/PermissionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/repository/UserSecurityRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/securityConfig/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/PermissionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/PermissionServiceImp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/RoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/RoleServiceImp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/UserSecImp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/classes/com/apisimple/_2practicaapisecurity/service/UserSecService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3.2-PracticaApiSecurity/target/test-classes/com/apisimple/_2practicaapisecurity/ApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/role/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/role/RoleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/role/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/role/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/role/RoleServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/role/RoleServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/user/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/4-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/user/UserServiceImp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +33,8 @@
         <option value="Spring Repository" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Exception" />
         <option value="Record" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -77,61 +57,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="4.291362677056871E-113" />
-      <entry key="S5" value="1.7082277644107803E-45" />
-      <entry key="S10" value="6.608917256892309E-23" />
-      <entry key="S30" value="8.476415558065016E-8" />
-      <entry key="S60" value="6.029515403517295E-4" />
-      <entry key="M2" value="0.06582146790703433" />
-      <entry key="M5" value="1.6727677616228476" />
-      <entry key="M10" value="7.518128949138508" />
-      <entry key="M15" value="15.8550778036062" />
-      <entry key="M30" value="45.10640662448813" />
-      <entry key="H1" value="100.14892043292306" />
-      <entry key="H2" value="212.23783787958888" />
-      <entry key="H4" value="395.1929351547526" />
-      <entry key="D1" value="788.2062119992714" />
-      <entry key="W1" value="901.251667593746" />
+      <entry key="MS100" value="2.6821651522121656E-64" />
+      <entry key="MS500" value="1.9306213435967013E-13" />
+      <entry key="S2" value="6.62864560057507E-4" />
+      <entry key="S5" value="0.05405257244272898" />
+      <entry key="S10" value="0.281060929035285" />
+      <entry key="S30" value="2.0073003181736495" />
+      <entry key="S60" value="5.713913564928222" />
+      <entry key="M2" value="13.904193637796007" />
+      <entry key="M5" value="32.69723321076289" />
+      <entry key="M10" value="52.4000425518193" />
+      <entry key="M15" value="67.19399796972787" />
+      <entry key="M30" value="102.6010773643953" />
+      <entry key="H1" value="162.40524543388813" />
+      <entry key="H2" value="276.4117380846487" />
+      <entry key="H4" value="466.99693517191" />
+      <entry key="D1" value="909.4116066671633" />
+      <entry key="W1" value="1043.1852406693545" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.000000000000151" />
-      <entry key="MS500" value="1.0027278877587253" />
-      <entry key="S2" value="1.228537053740998" />
-      <entry key="S5" value="1.5540929822060732" />
-      <entry key="S10" value="1.7443742218844451" />
-      <entry key="S30" value="1.906283050239109" />
-      <entry key="S60" value="1.9530122743986607" />
-      <entry key="M2" value="2.064738034665048" />
-      <entry key="M5" value="3.8877045632060656" />
-      <entry key="M10" value="9.128534862094057" />
-      <entry key="M15" value="15.425128448142964" />
-      <entry key="M30" value="36.19354806516737" />
-      <entry key="H1" value="76.59742893898826" />
-      <entry key="H2" value="161.87915271815865" />
-      <entry key="H4" value="299.54176549818993" />
-      <entry key="D1" value="588.7925117580138" />
-      <entry key="W1" value="670.9569065672963" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000014043459973" />
+      <entry key="S2" value="1.051429280557564" />
+      <entry key="S5" value="1.461294426721532" />
+      <entry key="S10" value="2.1098221393463543" />
+      <entry key="S30" value="5.282763049775257" />
+      <entry key="S60" value="10.269580768224808" />
+      <entry key="M2" value="18.746092177376596" />
+      <entry key="M5" value="37.61744615569304" />
+      <entry key="M10" value="58.211333975007186" />
+      <entry key="M15" value="73.12271380527389" />
+      <entry key="M30" value="105.62186239046481" />
+      <entry key="H1" value="154.65402423382469" />
+      <entry key="H2" value="243.80118748197276" />
+      <entry key="H4" value="388.8732529245065" />
+      <entry key="D1" value="717.0061801944154" />
+      <entry key="W1" value="814.8909223131589" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.4944767724409905E-5" />
-      <entry key="MS500" value="0.10844585600027849" />
-      <entry key="S2" value="0.667928112412788" />
-      <entry key="S5" value="1.1894020333758943" />
-      <entry key="S10" value="1.5182691973760314" />
-      <entry key="S30" value="1.8179121388637913" />
-      <entry key="S60" value="1.9075309228927448" />
-      <entry key="M2" value="2.106280661921228" />
-      <entry key="M5" value="5.5432381530099875" />
-      <entry key="M10" value="16.62493302967526" />
-      <entry key="M15" value="31.253509378214996" />
-      <entry key="M30" value="81.26500333256763" />
-      <entry key="H1" value="176.70802574433253" />
-      <entry key="H2" value="374.0766877376739" />
-      <entry key="H4" value="694.6979203368618" />
-      <entry key="D1" value="1376.98686672891" />
-      <entry key="W1" value="1572.2066496450523" />
+      <entry key="MS100" value="1.7527745895340508E-5" />
+      <entry key="MS500" value="0.11187838251800507" />
+      <entry key="S2" value="0.6124304899802488" />
+      <entry key="S5" value="1.2394016188973782" />
+      <entry key="S10" value="2.176329890786227" />
+      <entry key="S30" value="7.0854187264533754" />
+      <entry key="S60" value="15.774975564867036" />
+      <entry key="M2" value="32.44549871277114" />
+      <entry key="M5" value="70.1299274291846" />
+      <entry key="M10" value="110.45930557985162" />
+      <entry key="M15" value="140.18597152269692" />
+      <entry key="M30" value="208.12519926449497" />
+      <entry key="H1" value="316.9856389433318" />
+      <entry key="H2" value="520.1539113022392" />
+      <entry key="H4" value="855.8230316124739" />
+      <entry key="D1" value="1626.403394746398" />
+      <entry key="W1" value="1858.0738308888335" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -263,6 +243,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application (4)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="4-ApiConKeycloak" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._apiconkeycloak.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="2-BackendSimple" />
@@ -272,6 +260,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.Application (4)" />
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.Application (1)" />
       <item itemvalue="Spring Boot.Application (2)" />

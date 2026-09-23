@@ -1,5 +1,6 @@
 package com.apisimple._apiconkeycloak.role;
 
+import com.apisimple._apiconkeycloak.shared.exception.ValorNotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,6 @@ public class RoleServiceImp implements RoleService {
 
     @Override
     public RoleEntity getRole(String roleName) {
-        // Manejar el caso sea Null con las expeciones
-        return roleRepository.findByRoleName(roleName);
+        return roleRepository.findByRoleName(roleName).orElseThrow(() -> new ValorNotFound(roleName));
     }
 }
