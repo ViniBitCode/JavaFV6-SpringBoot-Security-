@@ -33,63 +33,51 @@ export interface RegisterRequest {
    ========================================================================== */
 
 /**
- * Respuesta esperada de `POST /auth/login`.
+ * Respuesta de `POST /auth/login`, espejo del `SessionInfoDTO` del backend.
  *
- * Todo es opcional menos el token porque el contrato todavía no está cerrado:
- * el backend puede devolver el token como `token`, `accessToken` o `jwt`, y los
- * datos del usuario planos o anidados en `user`. El mapper acepta todas esas
- * variantes; acá solo se documentan.
+ * El `token` es un JWT firmado con HS256 que hay que mandar en cada pedido a
+ * un endpoint privado, como `Authorization: Bearer <token>`.
+ *
+ * Los campos son opcionales porque esto es JSON de la red: lo que garantiza
+ * que estén es la validación del mapper, no el tipo.
  */
 export interface AuthApiResponse {
+  username?: string;
+  role?: string;
   token?: string;
-  accessToken?: string;
-  jwt?: string;
-  tokenType?: string;
-  expiresIn?: number;
-
-  /** Datos del usuario anidados (forma habitual en Spring Security). */
-  user?: AuthApiUser;
-
-  /** Datos del usuario planos, al mismo nivel que el token. */
-  id?: string | number;
-  username?: string;
-  email?: string;
-  roles?: readonly string[];
-}
-
-/** Usuario tal como lo devuelve la API. */
-export interface AuthApiUser {
-  id?: string | number;
-  username?: string;
-  email?: string;
-  roles?: readonly string[];
 }
 
 /**
- * Respuesta esperada de `POST /auth/register`.
- * Hoy alcanza con saber si salió bien (2xx); si el backend empieza a devolver
- * el usuario creado, agregar los campos acá.
+ * Respuesta de `POST /auth/register` (`RegisterResponseDTO` del backend).
+ * Hoy alcanza con saber si salió bien (2xx).
  */
 export interface RegisterApiResponse {
-  id?: string | number;
   username?: string;
-  email?: string;
-  message?: string;
 }
 
 /* ============================================================================
    3. Modelo interno de la app
    ========================================================================== */
 
+/**
+ * Roles que maneja el backend (tabla `role`, cargada por `data.sql`).
+ * Están acá como constantes para que nadie escriba 'ADMIN' suelto por ahí.
+ */
+export const ROL_ADMIN = 'ADMIN';
+export const ROL_USER = 'USER';
+
 /** Usuario autenticado, ya normalizado. */
 export interface AuthUser {
-  readonly id: string | null;
   readonly username: string;
-  readonly email: string | null;
-  readonly roles: readonly string[];
+  /**
+   * Rol único, en singular y sin el prefijo `ROLE_`: 'ADMIN' | 'USER'.
+   * Es singular porque el dominio lo es: `UserEntity` tiene un `@ManyToOne`
+   * con `RoleEntity`. Los permisos cuelgan del rol, del lado del backend.
+   */
+  readonly role: string;
 }
 
-/** Sesión activa: token + usuario. Es lo que se persiste y expone por signals. */
+/** Sesión activa: el JWT + el usuario. Es lo que se persiste y se expone. */
 export interface Session {
   readonly token: string;
   readonly user: AuthUser;

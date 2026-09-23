@@ -1,0 +1,49 @@
+.create {
+  max-width: var(--card-max-width);
+  margin-inline: auto;
+}
+
+.create__back-link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--c-text-muted);
+  text-decoration: none;
+}
+
+.create__back-link:hover {
+  color: var(--c-accent);
+}
+
+.create__head {
+  margin-top: var(--space-5);
+}
+
+.create__title {
+  margin-top: var(--space-2);
+  font-size: var(--text-2xl);
+}
+
+.create__lead {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--c-text-muted);
+}
+
+.create__card {
+  margin-top: var(--space-6);
+}
+
+.create__aviso {
+  margin-bottom: var(--space-5);
+}
+
+/* Nota sobre el rol: informativa, no una alerta. */
+.create__nota {
+  margin-bottom: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  background: var(--c-surface-2);
+  border: 1px dashed var(--c-border-strong);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--c-text-muted);
+}

@@ -19,6 +19,40 @@
   backdrop-filter: blur(10px);
 }
 
+/* Navegación entre secciones.
+   En pantallas chicas pasa a una tercera fila (order + 100% de ancho) para no
+   apretar la marca contra los botones. */
+.panel__nav {
+  order: 3;
+  flex-basis: 100%;
+  display: flex;
+  gap: var(--space-1);
+  overflow-x: auto;
+}
+
+.panel__link {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--c-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.panel__link:hover {
+  color: var(--c-text);
+  background: var(--c-surface-2);
+}
+
+.panel__link--active {
+  color: var(--c-accent);
+  background: var(--c-accent-soft);
+}
+
 .panel__actions {
   display: flex;
   align-items: center;
@@ -66,6 +100,14 @@
 @media (min-width: 40rem) {
   .panel__bar {
     padding: var(--space-4) var(--space-6);
+  }
+
+  /* Ya hay lugar: la navegación vuelve a la fila de la marca. */
+  .panel__nav {
+    order: 0;
+    flex-basis: auto;
+    margin-right: auto;
+    margin-left: var(--space-4);
   }
 
   .panel__chip-text {

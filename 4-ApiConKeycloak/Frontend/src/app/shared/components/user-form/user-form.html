@@ -1,0 +1,171 @@
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="alEnviar()"
+  [attr.aria-busy]="enviando()"
+  novalidate
+>
+  <!-- Usuario -->
+  <div class="form-row">
+    <div class="field" [class.field--invalid]="tieneError('username')">
+      <input
+        [id]="idDe('username')"
+        class="field__input"
+        type="text"
+        formControlName="username"
+        placeholder=" "
+        autocomplete="username"
+        autocapitalize="none"
+        spellcheck="false"
+        [attr.aria-invalid]="tieneError('username')"
+        [attr.aria-describedby]="tieneError('username') ? idDe('username-error') : null"
+      />
+      <label class="field__label" [attr.for]="idDe('username')">Usuario</label>
+    </div>
+
+    @if (tieneError('username')) {
+      <p class="field-error" [id]="idDe('username-error')">
+        <span class="field-error__mark" aria-hidden="true">!</span>
+        {{ mensajeDeError('username') }}
+      </p>
+    }
+  </div>
+
+  <!-- Email -->
+  <div class="form-row">
+    <div class="field" [class.field--invalid]="tieneError('email')">
+      <input
+        [id]="idDe('email')"
+        class="field__input"
+        type="email"
+        formControlName="email"
+        placeholder=" "
+        autocomplete="email"
+        autocapitalize="none"
+        spellcheck="false"
+        [attr.aria-invalid]="tieneError('email')"
+        [attr.aria-describedby]="tieneError('email') ? idDe('email-error') : null"
+      />
+      <label class="field__label" [attr.for]="idDe('email')">Email</label>
+    </div>
+
+    @if (tieneError('email')) {
+      <p class="field-error" [id]="idDe('email-error')">
+        <span class="field-error__mark" aria-hidden="true">!</span>
+        {{ mensajeDeError('email') }}
+      </p>
+    }
+  </div>
+
+  <!-- Contraseña + checklist de requisitos -->
+  <div class="form-row">
+    <div class="field field--with-action" [class.field--invalid]="tieneError('password')">
+      <input
+        [id]="idDe('password')"
+        class="field__input"
+        [type]="passwordVisible() ? 'text' : 'password'"
+        formControlName="password"
+        placeholder=" "
+        autocomplete="new-password"
+        [attr.aria-invalid]="tieneError('password')"
+        [attr.aria-describedby]="
+          tieneError('password')
+            ? idDe('password-error') + ' ' + idDe('password-rules')
+            : idDe('password-rules')
+        "
+      />
+      <label class="field__label" [attr.for]="idDe('password')">Contraseña</label>
+
+      <button
+        type="button"
+        class="field__action"
+        [attr.aria-pressed]="passwordVisible()"
+        [attr.aria-label]="passwordVisible() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+        (click)="alternarPassword()"
+      >
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="field__action-icon">
+          @if (passwordVisible()) {
+            <path
+              d="M2 10s3-5.5 8-5.5S18 10 18 10s-3 5.5-8 5.5S2 10 2 10Zm8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+            />
+          } @else {
+            <path
+              d="M3.3 2.3 2 3.6l2.3 2.3A12.6 12.6 0 0 0 2 10s3 5.5 8 5.5a8.9 8.9 0 0 0 3.6-.75l2.2 2.2 1.3-1.3-13.8-13.35ZM10 13a3 3 0 0 1-2.8-4.1l3.9 3.9c-.34.13-.72.2-1.1.2Zm0-7c5 0 8 5.5 8 5.5a14.4 14.4 0 0 1-1.8 2.4l-1.4-1.4c.5-.5.9-1 1.1-1.3-.8-1-3-3.2-5.9-3.2-.3 0-.6 0-.9.06L7.7 6.2c.74-.13 1.5-.2 2.3-.2Z"
+            />
+          }
+        </svg>
+      </button>
+    </div>
+
+    @if (tieneError('password')) {
+      <p class="field-error" [id]="idDe('password-error')">
+        <span class="field-error__mark" aria-hidden="true">!</span>
+        {{ mensajeDeError('password') }}
+      </p>
+    }
+
+    <!-- Cada regla se marca en verde en el momento en que se cumple. -->
+    <ul class="rules" [id]="idDe('password-rules')" aria-label="Requisitos de la contraseña">
+      @for (regla of reglas(); track regla.id) {
+        <li class="rules__item" [class.rules__item--met]="regla.cumplida">
+          <span class="rules__mark" aria-hidden="true">{{ regla.cumplida ? '✓' : '·' }}</span>
+          <span>{{ regla.etiqueta }}</span>
+          <span class="sr-only">{{ regla.cumplida ? ': cumplido' : ': pendiente' }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <!-- Confirmación -->
+  <div class="form-row">
+    <div class="field field--with-action" [class.field--invalid]="tieneError('confirmPassword')">
+      <input
+        [id]="idDe('confirm')"
+        class="field__input"
+        [type]="confirmacionVisible() ? 'text' : 'password'"
+        formControlName="confirmPassword"
+        placeholder=" "
+        autocomplete="new-password"
+        [attr.aria-invalid]="tieneError('confirmPassword')"
+        [attr.aria-describedby]="tieneError('confirmPassword') ? idDe('confirm-error') : null"
+      />
+      <label class="field__label" [attr.for]="idDe('confirm')">Repetir contraseña</label>
+
+      <button
+        type="button"
+        class="field__action"
+        [attr.aria-pressed]="confirmacionVisible()"
+        [attr.aria-label]="confirmacionVisible() ? 'Ocultar confirmación' : 'Mostrar confirmación'"
+        (click)="alternarConfirmacion()"
+      >
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="field__action-icon">
+          @if (confirmacionVisible()) {
+            <path
+              d="M2 10s3-5.5 8-5.5S18 10 18 10s-3 5.5-8 5.5S2 10 2 10Zm8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+            />
+          } @else {
+            <path
+              d="M3.3 2.3 2 3.6l2.3 2.3A12.6 12.6 0 0 0 2 10s3 5.5 8 5.5a8.9 8.9 0 0 0 3.6-.75l2.2 2.2 1.3-1.3-13.8-13.35ZM10 13a3 3 0 0 1-2.8-4.1l3.9 3.9c-.34.13-.72.2-1.1.2Zm0-7c5 0 8 5.5 8 5.5a14.4 14.4 0 0 1-1.8 2.4l-1.4-1.4c.5-.5.9-1 1.1-1.3-.8-1-3-3.2-5.9-3.2-.3 0-.6 0-.9.06L7.7 6.2c.74-.13 1.5-.2 2.3-.2Z"
+            />
+          }
+        </svg>
+      </button>
+    </div>
+
+    @if (tieneError('confirmPassword')) {
+      <p class="field-error" [id]="idDe('confirm-error')">
+        <span class="field-error__mark" aria-hidden="true">!</span>
+        {{ mensajeDeError('confirmPassword') }}
+      </p>
+    }
+  </div>
+
+  <button class="btn btn--primary btn--block" type="submit" [disabled]="form.invalid || enviando()">
+    @if (enviando()) {
+      <span class="btn__spinner" aria-hidden="true"></span>
+      {{ textoEnviando() }}
+    } @else {
+      {{ textoEnviar() }}
+    }
+  </button>
+</form>

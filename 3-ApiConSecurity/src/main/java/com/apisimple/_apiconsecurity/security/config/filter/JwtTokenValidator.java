@@ -29,7 +29,6 @@ public class JwtTokenValidator extends OncePerRequestFilter {
         this.jwtUtils = jwtUtils;
     }
 
-
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
 
@@ -56,7 +55,6 @@ public class JwtTokenValidator extends OncePerRequestFilter {
         }
 
         filterChain.doFilter(request, response);
-
 
     }
 }

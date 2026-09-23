@@ -1,0 +1,174 @@
+.users__head {
+  max-width: 44rem;
+}
+
+.users__title {
+  margin-top: var(--space-2);
+  font-size: var(--text-2xl);
+}
+
+.users__lead {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--c-text-muted);
+}
+
+.users__aviso {
+  margin-top: var(--space-5);
+}
+
+/* Barra de acciones: se apila en pantallas chicas. */
+.users__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.users__count {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--c-text-subtle);
+  letter-spacing: var(--tracking-wide);
+}
+
+.users__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.users__panel {
+  margin-top: var(--space-4);
+}
+
+/* ---------------------------------------------------------------------------
+   Tabla
+   ------------------------------------------------------------------------- */
+
+/* El scroll horizontal vive acá adentro, no en el <body>. */
+.users__scroll {
+  overflow-x: auto;
+  /* Deja respirar la franja de acento de la tarjeta. */
+  padding-top: var(--space-1);
+}
+
+.users__table {
+  width: 100%;
+  min-width: 28rem;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.users__table th,
+.users__table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.users__table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--c-surface-2);
+  border-bottom: 1px solid var(--c-border-strong);
+  color: var(--c-text-muted);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.users__table tbody tr + tr {
+  border-top: 1px solid var(--c-border);
+}
+
+.users__table tbody tr:hover {
+  background: var(--c-surface-2);
+}
+
+.users__cell-name {
+  font-weight: 600;
+  color: var(--c-text);
+  overflow-wrap: anywhere;
+}
+
+/* Badge de rol */
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: var(--c-surface-inset);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+}
+
+.badge--admin {
+  background: var(--c-accent-soft);
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
+
+/* ---------------------------------------------------------------------------
+   Estados vacíos y de carga
+   ------------------------------------------------------------------------- */
+.users__empty {
+  padding: var(--space-10) var(--space-6);
+  text-align: center;
+}
+
+.users__empty-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.users__empty-text {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--c-text-subtle);
+}
+
+.users__skeleton {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.users__skeleton-row {
+  height: 1.5rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--c-surface-inset) 0%,
+    var(--c-surface-2) 50%,
+    var(--c-surface-inset) 100%
+  );
+  background-size: 200% 100%;
+  animation: users-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes users-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Respeta a quien pidió menos movimiento en el sistema. */
+@media (prefers-reduced-motion: reduce) {
+  .users__skeleton-row {
+    animation: none;
+  }
+}
+
+@media (min-width: 34rem) {
+  .users__title {
+    font-size: var(--text-3xl);
+  }
+}

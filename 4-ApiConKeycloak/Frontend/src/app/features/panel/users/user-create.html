@@ -1,0 +1,31 @@
+<section class="create">
+  <nav class="create__back" aria-label="Volver">
+    <a routerLink="/panel/usuarios" class="create__back-link">← Volver a usuarios</a>
+  </nav>
+
+  <header class="create__head">
+    <p class="mono-eyebrow">Administración</p>
+    <h1 class="create__title">Nuevo usuario</h1>
+    <p class="create__lead">Los mismos datos que pide el registro público.</p>
+  </header>
+
+  <div class="card create__card">
+    <div class="card__body">
+      @if (errorDelServidor(); as error) {
+        <app-alert tone="danger" class="create__aviso">{{ error }}</app-alert>
+      }
+
+      <p class="create__nota">
+        La cuenta se crea siempre con el rol <strong>USER</strong>: el backend lo fija al registrar.
+      </p>
+
+      <app-user-form
+        idPrefijo="admin-nuevo"
+        textoEnviar="Crear usuario"
+        textoEnviando="Creando usuario…"
+        [enviando]="enviando()"
+        (enviar)="crear($event)"
+      />
+    </div>
+  </div>
+</section>

@@ -1,5 +1,7 @@
 package com.apisimple._apiconkeycloak.user;
 
+import com.apisimple._apiconkeycloak.user.dto.UserInfoDTO;
+
 import java.util.List;
 
 public interface UserService {
@@ -9,5 +11,7 @@ public interface UserService {
     public UserEntity getUser(String username);
 
     public List<UserEntity> getAllUsers();
+
+    public List<UserInfoDTO> getUsersInfo();
 
 }

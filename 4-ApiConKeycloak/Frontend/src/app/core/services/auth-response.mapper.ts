@@ -1,4 +1,4 @@
-import { AuthApiResponse, AuthUser, Session } from '../models/auth.models';
+import { AuthApiResponse, Session } from '../models/auth.models';
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════╗
@@ -24,9 +24,8 @@ export class AuthContractError extends Error {
  *
  * @param raw             Cuerpo JSON devuelto por la API.
  * @param usernameEnviado Usuario que se mandó en el login. Se usa como respaldo
- *                        si la API no devuelve datos del usuario (pasa cuando
- *                        solo responde el token).
- * @throws AuthContractError si no se puede extraer un token.
+ *                        si la API no lo devuelve.
+ * @throws AuthContractError si falta el token, el usuario o el rol.
  */
 export function mapAuthResponse(
   raw: AuthApiResponse | null | undefined,
@@ -36,23 +35,24 @@ export function mapAuthResponse(
     throw new AuthContractError('el cuerpo está vacío o no es un objeto');
   }
 
-  // --- Token: se aceptan los tres nombres más habituales ------------------
-  const token = primerTextoNoVacio(raw.token, raw.accessToken, raw.jwt);
+  const token = primerTextoNoVacio(raw.token);
   if (!token) {
-    throw new AuthContractError('no vino ningún token (token / accessToken / jwt)');
+    throw new AuthContractError('no vino el token');
   }
 
-  // --- Usuario: puede venir anidado en `user` o plano en la raíz ----------
-  const datosUsuario = raw.user ?? raw;
+  const username = primerTextoNoVacio(raw.username, usernameEnviado);
+  if (!username) {
+    throw new AuthContractError('no vino el nombre de usuario');
+  }
 
-  const user: AuthUser = {
-    id: datosUsuario.id !== undefined && datosUsuario.id !== null ? String(datosUsuario.id) : null,
-    username: primerTextoNoVacio(datosUsuario.username, usernameEnviado) ?? usernameEnviado,
-    email: primerTextoNoVacio(datosUsuario.email) ?? null,
-    roles: Array.isArray(datosUsuario.roles) ? [...datosUsuario.roles] : [],
-  };
+  // El rol se exige en vez de completarse con un valor por defecto: de él
+  // depende qué ve el usuario, y adivinarlo sería mostrar de menos o de más.
+  const role = primerTextoNoVacio(raw.role);
+  if (!role) {
+    throw new AuthContractError('no vino el rol del usuario');
+  }
 
-  return { token, user };
+  return { token, user: { username, role } };
 }
 
 /** Devuelve el primer valor que sea un string con contenido real. */

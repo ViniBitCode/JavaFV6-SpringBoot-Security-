@@ -4,6 +4,29 @@
   <header class="panel__bar">
     <app-brand />
 
+    <nav class="panel__nav" aria-label="Secciones del panel">
+      <a
+        class="panel__link"
+        routerLink="/panel"
+        routerLinkActive="panel__link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+      >
+        Inicio
+      </a>
+
+      @if (esAdmin()) {
+        <a
+          class="panel__link"
+          routerLink="/panel/usuarios"
+          routerLinkActive="panel__link--active"
+          ariaCurrentWhenActive="page"
+        >
+          Usuarios
+        </a>
+      }
+    </nav>
+
     <div class="panel__actions">
       @if (usuario(); as datos) {
         <span class="panel__chip">

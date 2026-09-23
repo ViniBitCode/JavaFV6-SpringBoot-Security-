@@ -7,6 +7,12 @@ interface DatoDeResumen {
   readonly detalle: string;
 }
 
+/** Fecha y hora cortas, en formato local. */
+const FORMATO_FECHA = new Intl.DateTimeFormat('es-AR', {
+  dateStyle: 'short',
+  timeStyle: 'short',
+});
+
 /**
  * Inicio del panel. El resumen se arma con los datos reales de la sesión: no
  * hay valores de ejemplo, así que lo que se ve es lo que devolvió la API.
@@ -23,12 +29,13 @@ export class PanelHome {
 
   protected readonly resumen = computed<readonly DatoDeResumen[]>(() => {
     const usuario = this.auth.user();
+    const vence = this.auth.expiracion();
 
     return [
       {
         etiqueta: 'Sesión',
         valor: usuario ? 'Activa' : 'Sin sesión',
-        detalle: 'El token se envía solo en los pedidos a la API.',
+        detalle: 'El token viaja en el header Authorization de cada pedido.',
       },
       {
         etiqueta: 'Usuario',
@@ -36,14 +43,14 @@ export class PanelHome {
         detalle: 'Nombre con el que iniciaste sesión.',
       },
       {
-        etiqueta: 'Email',
-        valor: usuario?.email ?? 'No informado',
-        detalle: 'Aparece si la API lo devuelve en el login.',
+        etiqueta: 'Rol',
+        valor: usuario?.role ?? 'No informado',
+        detalle: 'Servirá para mostrar u ocultar secciones.',
       },
       {
-        etiqueta: 'Roles',
-        valor: usuario && usuario.roles.length > 0 ? usuario.roles.join(', ') : 'No informados',
-        detalle: 'Servirán para mostrar u ocultar secciones.',
+        etiqueta: 'El token vence',
+        valor: vence ? FORMATO_FECHA.format(vence) : '—',
+        detalle: 'Sale del claim exp. Después de esa hora hay que volver a entrar.',
       },
     ];
   });

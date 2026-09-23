@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Session } from '../models/auth.models';
 
-/** Clave de localStorage. Versionada para poder invalidar sesiones viejas. */
-const STORAGE_KEY = 'retroauth.session.v1';
+/**
+ * Clave de localStorage. Versionada para poder invalidar sesiones viejas:
+ * v3 es la sesión con JWT (v2 era la sesión sin token).
+ */
+const STORAGE_KEY = 'retroauth.session.v3';
 
 /**
  * Persistencia de la sesión. Aislada en su propio servicio para que cambiar
  * localStorage por sessionStorage (o por cookies) no obligue a tocar el
  * AuthService.
+ *
+ * Solo valida la FORMA de lo guardado. Si el token ya venció es asunto del
+ * AuthService: acá no se sabe nada de JWT.
  */
 @Injectable({ providedIn: 'root' })
 export class SessionStorageService {
@@ -63,18 +69,14 @@ export class SessionStorageService {
     if (typeof token !== 'string' || token.length === 0) {
       return null;
     }
-    if (!user || typeof user.username !== 'string') {
+    if (!user || typeof user.username !== 'string' || user.username.length === 0) {
+      return null;
+    }
+    // Sin rol no se puede decidir qué mostrar: se trata como sesión inválida.
+    if (typeof user.role !== 'string' || user.role.length === 0) {
       return null;
     }
 
-    return {
-      token,
-      user: {
-        id: typeof user.id === 'string' ? user.id : null,
-        username: user.username,
-        email: typeof user.email === 'string' ? user.email : null,
-        roles: Array.isArray(user.roles) ? [...user.roles] : [],
-      },
-    };
+    return { token, user: { username: user.username, role: user.role } };
   }
 }

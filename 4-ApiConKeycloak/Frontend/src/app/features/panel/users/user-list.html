@@ -1,0 +1,90 @@
+<section class="users">
+  <header class="users__head">
+    <p class="mono-eyebrow">Administración</p>
+    <h1 class="users__title">Usuarios</h1>
+    <p class="users__lead">Todas las cuentas registradas en la base de datos.</p>
+  </header>
+
+  @if (aviso(); as notice) {
+    <app-alert [tone]="notice.tone" class="users__aviso">{{ notice.text }}</app-alert>
+  }
+
+  <div class="users__toolbar">
+    <p class="users__count" role="status">
+      @if (cargando()) {
+        Cargando…
+      } @else if (error()) {
+        Sin datos
+      } @else {
+        {{ conteo() }}
+      }
+    </p>
+
+    <div class="users__actions">
+      <button type="button" class="btn btn--ghost" (click)="cargar()" [disabled]="cargando()">
+        Actualizar
+      </button>
+      <a class="btn btn--primary" routerLink="nuevo">Nuevo usuario</a>
+    </div>
+  </div>
+
+  @if (error(); as mensaje) {
+    <app-alert tone="danger" class="users__aviso">{{ mensaje }}</app-alert>
+  }
+
+  @if (cargando()) {
+    <!-- Esqueleto: ocupa el mismo alto que la tabla para que no salte el layout. -->
+    <div class="card users__panel" aria-hidden="true">
+      <div class="users__skeleton">
+        @for (fila of filasDeCarga; track fila) {
+          <div class="users__skeleton-row"></div>
+        }
+      </div>
+    </div>
+  }
+
+  @if (estaVacio()) {
+    <div class="card users__panel">
+      <div class="users__empty">
+        <p class="users__empty-title">Todavía no hay usuarios</p>
+        <p class="users__empty-text">Cuando se cree el primero va a aparecer en esta tabla.</p>
+      </div>
+    </div>
+  }
+
+  @if (hayDatos()) {
+    <div class="card users__panel">
+      <!-- La tabla scrollea sola en pantallas angostas: la página nunca se va al costado. -->
+      <div class="users__scroll">
+        <table class="users__table">
+          <caption class="sr-only">
+            Usuarios registrados
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Usuario</th>
+              <th scope="col">Email</th>
+              <th scope="col">Rol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- `username` es único en la base, así que sirve de clave. -->
+            @for (usuario of usuarios(); track usuario.username) {
+              <tr>
+                <th scope="row" class="users__cell-name">{{ usuario.username }}</th>
+                <td>{{ usuario.email ?? '—' }}</td>
+                <td>
+                  @if (usuario.role; as rol) {
+                    <span class="badge" [class.badge--admin]="rol === 'ADMIN'">{{ rol }}</span>
+                  } @else {
+                    —
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  }
+</section>

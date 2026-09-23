@@ -4,7 +4,8 @@ import { esUrlDeLaApi } from '../config/api.config';
 import { AuthService } from '../services/auth.service';
 
 /**
- * Agrega `Authorization: Bearer <token>` a los pedidos de nuestra API.
+ * Agrega `Authorization: Bearer <token>` a los pedidos de nuestra API, que es
+ * lo que espera el `JwtAuthFilter` del backend.
  *
  * Se filtra por URL a propósito: si algún día la app pide algo a un tercero
  * (un CDN, un mapa), no queremos filtrarle el token.
