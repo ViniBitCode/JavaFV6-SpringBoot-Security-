@@ -5,44 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="creacion de usuario">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/auth/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionServiceImp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/role/RoleEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/role/RoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/role/RoleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/role/RoleServiceImp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/exception/ValorNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/exception/ValorYaExisteException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/security/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/security/UserDetailsServiceImp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/security/jwt/JwtAuthFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/security/jwt/JwtService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/UserEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/UserServiceImp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/dto/LoginInfoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/dto/RegisterInfoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/dto/RegisterResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/dto/SessionInfoDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/test/java/com/apisimple/_apiconkeycloak/ApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +23,7 @@
         <option value="Exception" />
         <option value="Record" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -154,49 +118,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Maven.3-2-PracticaApiSecurity [clean].executor": "Run",
-    "Maven.4.1-ApiConKeycloak [clean].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
-    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.ruby.rubocop.migration.global.runOnSaveToExternalFormatter": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.Application (3).executor": "Run",
-    "Spring Boot.Application (4).executor": "Run",
-    "Spring Boot.Application (5).executor": "Run",
-    "Spring Boot.Application.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Practica2-ApiConKeycloak",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "G:/Proyectos personales/ProyectosJava",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.editor",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Maven.3-2-PracticaApiSecurity [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.4.1-ApiConKeycloak [clean].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;New/updated database configurations found&quot;,
+    &quot;Notification.DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ruby.rubocop.migration.global.runOnSaveToExternalFormatter&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application (3).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application (4).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application (5).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Practica2-ApiConKeycloak&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Proyectos personales/ProyectosJava&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Proyectos personales\ProyectosJava\4-ApiConKeycloak\Backend\src\main\resources" />
