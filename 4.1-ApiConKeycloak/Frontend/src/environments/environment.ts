@@ -1,18 +1,11 @@
 import type { AppEnvironment } from './environment.model';
 
-/**
- * Configuración de PRODUCCIÓN.
- *
- * TODO: reemplazar los valores por los reales antes de publicar. El cliente de
- *       Keycloak de producción tiene que tener registradas las Valid redirect
- *       URIs y Web origins del dominio final, no las de localhost.
- */
 export const environment: AppEnvironment = {
   production: true,
-  apiBaseUrl: 'https://CAMBIAR-POR-LA-URL-DE-LA-API',
+  apiBaseUrl: 'https://javafv6-springboot-security-1.onrender.com',
   keycloak: {
-    url: 'https://CAMBIAR-POR-LA-URL-DE-KEYCLOAK',
-    realm: 'primer-api-keycloak',
+    url: 'https://lemur-10.cloud-iam.com/auth/realms/primer-api-keycloak-hosteada',
+    realm: 'primer-api-keycloak-hosteada',
     clientId: 'angular-app',
   },
 };
