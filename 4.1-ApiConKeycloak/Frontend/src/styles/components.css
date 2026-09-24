@@ -1,0 +1,404 @@
+/* ============================================================================
+   COMPONENTES — lenguaje visual compartido (tarjetas, campos, botones, avisos).
+   Vive en estilos globales porque lo usan varias pantallas y porque así los
+   componentes se quedan solo con su layout propio.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   Tarjeta
+   ------------------------------------------------------------------------- */
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+/* Franja de acentos arriba: el guiño retro de la tarjeta. */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--c-accent) 0 33%,
+    var(--c-amber) 33% 66%,
+    var(--c-cyan) 66% 100%
+  );
+}
+
+.card__body {
+  padding: var(--space-8) var(--space-6) var(--space-6);
+}
+
+@media (min-width: 30rem) {
+  .card__body {
+    padding: var(--space-10) var(--space-8) var(--space-8);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Formularios
+   ------------------------------------------------------------------------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Campo con label flotante.
+   Truco: el input lleva placeholder=" " para poder usar :placeholder-shown y
+   saber si está vacío sin JavaScript. El <label for> sigue existiendo de
+   verdad, así que la accesibilidad no se resiente. */
+.field {
+  position: relative;
+}
+
+.field__input {
+  width: 100%;
+  padding: var(--space-6) var(--space-4) var(--space-2);
+  background: var(--c-surface-inset);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  line-height: 1.4;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.field__input::placeholder {
+  color: transparent;
+}
+
+.field__label {
+  position: absolute;
+  left: calc(var(--space-4) + 1px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c-text-subtle);
+  font-size: var(--text-base);
+  pointer-events: none;
+  transition:
+    top var(--transition-fast),
+    transform var(--transition-fast),
+    font-size var(--transition-fast),
+    color var(--transition-fast);
+}
+
+/* El label sube cuando el campo tiene foco o ya tiene contenido. */
+.field__input:focus + .field__label,
+.field__input:not(:placeholder-shown) + .field__label {
+  top: var(--space-2);
+  transform: translateY(0);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  font-weight: 600;
+  color: var(--c-text-muted);
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--c-accent);
+  background: var(--c-surface);
+  box-shadow: 0 0 0 4px var(--c-accent-ring);
+}
+
+.field__input:focus + .field__label {
+  color: var(--c-accent);
+}
+
+.field__input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Campo con botón a la derecha (mostrar/ocultar contraseña). */
+.field--with-action .field__input {
+  padding-right: 3.25rem;
+}
+
+.field__action {
+  position: absolute;
+  right: var(--space-2);
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+  color: var(--c-text-subtle);
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.field__action:hover {
+  color: var(--c-text);
+  background: var(--c-surface-2);
+}
+
+.field__action-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: currentColor;
+}
+
+/* Estado de error */
+.field--invalid .field__input {
+  border-color: var(--c-danger);
+  background: var(--c-danger-soft);
+}
+
+.field--invalid .field__input:focus {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-danger) 28%, transparent);
+}
+
+.field--invalid .field__label,
+.field--invalid .field__input:focus + .field__label {
+  color: var(--c-danger);
+}
+
+.field-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--c-danger);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.field-error__mark {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  background: var(--c-danger);
+  color: var(--c-surface);
+  font-size: var(--text-2xs);
+  font-weight: 700;
+}
+
+.field-hint {
+  color: var(--c-text-subtle);
+  font-size: var(--text-sm);
+}
+
+/* ---------------------------------------------------------------------------
+   Botones
+   ------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.875rem;
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-text-on-accent);
+  /* Sombra dura desplazada: detalle retro que se aplana al presionar. */
+  box-shadow: 3px 3px 0 0 var(--c-text);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--c-accent-hover);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 0 var(--c-text);
+}
+
+.btn--primary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 0 var(--c-text);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--c-border-strong);
+  color: var(--c-text-muted);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
+
+/* Deshabilitado: se apaga el color de acento para que no parezca accionable. */
+.btn:disabled {
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn--primary:disabled {
+  background: var(--c-surface-inset);
+  border-color: var(--c-border);
+  color: var(--c-text-subtle);
+}
+
+.btn--ghost:disabled {
+  opacity: 0.55;
+}
+
+/* Indicador de carga dentro del botón */
+.btn__spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Avisos
+   ------------------------------------------------------------------------- */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid;
+  border-left-width: 4px;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+}
+
+.alert__icon {
+  flex: 0 0 auto;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.alert--danger {
+  background: var(--c-danger-soft);
+  border-color: var(--c-danger);
+  color: var(--c-danger);
+}
+
+.alert--success {
+  background: var(--c-success-soft);
+  border-color: var(--c-success);
+  color: var(--c-success);
+}
+
+.alert--warning {
+  background: var(--c-warning-soft);
+  border-color: var(--c-warning);
+  color: var(--c-warning);
+}
+
+/* ---------------------------------------------------------------------------
+   Checklist de requisitos (la usa la contraseña del registro)
+   ------------------------------------------------------------------------- */
+.rules {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  list-style: none;
+  background: var(--c-surface-2);
+  border: 1px dashed var(--c-border-strong);
+  border-radius: var(--radius-md);
+}
+
+.rules__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--c-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.rules__mark {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 50%;
+  font-size: var(--text-2xs);
+  line-height: 1;
+  color: var(--c-text-subtle);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.rules__item--met {
+  color: var(--c-success);
+  font-weight: 500;
+}
+
+.rules__item--met .rules__mark {
+  background: var(--c-success);
+  border-color: var(--c-success);
+  color: var(--c-surface);
+}
+
+/* ---------------------------------------------------------------------------
+   Varios
+   ------------------------------------------------------------------------- */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--c-text-subtle);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--c-border);
+}

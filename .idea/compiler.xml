@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="3-1-ApiConOAuth2" />
       </profile>
-      <profile name="Annotation profile for 4-ApiConKeycloak" enabled="true">
+      <profile name="Annotation profile for 4.1-ApiConKeycloak" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -20,6 +20,7 @@
         <module name="4-ApiConKeycloak" />
         <module name="3-ApiConSecurity" />
         <module name="2-BackendSimple" />
+        <module name="4-ApiConKeycloak (1)" />
         <module name="3-2-PracticaApiSecurity" />
       </profile>
     </annotationProcessing>
@@ -31,6 +32,7 @@
       <module name="3-2-PracticaApiSecurity" options="-parameters" />
       <module name="3-ApiConSecurity" options="-parameters" />
       <module name="4-ApiConKeycloak" options="-parameters" />
+      <module name="4-ApiConKeycloak (1)" options="-parameters" />
     </option>
   </component>
 </project>

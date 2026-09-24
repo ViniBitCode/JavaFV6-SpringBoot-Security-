@@ -1,0 +1,23 @@
+<!doctype html>
+<!--
+  Chequeo silencioso de sesión de Keycloak.
+
+  keycloak-js abre este archivo dentro de un iframe oculto contra el servidor de
+  Keycloak para preguntar, sin redirigir la página entera, si el usuario ya tiene
+  una sesión abierta (`onLoad: 'check-sso'`). Lo único que hace es devolverle el
+  resultado a la ventana que lo abrió.
+
+  Tiene que estar servido por la app en /silent-check-sso.html y esa misma URL
+  debe figurar en las Valid redirect URIs del cliente en Keycloak.
+-->
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chequeo de sesión</title>
+  </head>
+  <body>
+    <script>
+      parent.postMessage(location.href, location.origin);
+    </script>
+  </body>
+</html>

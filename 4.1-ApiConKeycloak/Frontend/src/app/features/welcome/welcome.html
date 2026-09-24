@@ -1,0 +1,37 @@
+<app-auth-shell
+  eyebrow="Acceso"
+  title="Retroauth"
+  subtitle="Las credenciales las maneja Keycloak. Entrá con tu cuenta o creá una nueva."
+>
+  <div class="welcome__acciones">
+    <button
+      type="button"
+      class="btn btn--primary btn--block"
+      [disabled]="saliendo()"
+      (click)="iniciarSesion()"
+    >
+      @if (saliendo()) {
+        <span class="btn__spinner" aria-hidden="true"></span>
+        Redirigiendo…
+      } @else {
+        Iniciar sesión
+      }
+    </button>
+
+    <button
+      type="button"
+      class="btn btn--ghost btn--block"
+      [disabled]="saliendo()"
+      (click)="registrarse()"
+    >
+      Registrarse
+    </button>
+  </div>
+
+  <p class="welcome__nota">
+    Desde la pantalla de Keycloak también podés recuperar tu contraseña o entrar con Google o
+    GitHub.
+  </p>
+
+  <p data-footer>Necesitás Keycloak y la API levantados para poder entrar.</p>
+</app-auth-shell>

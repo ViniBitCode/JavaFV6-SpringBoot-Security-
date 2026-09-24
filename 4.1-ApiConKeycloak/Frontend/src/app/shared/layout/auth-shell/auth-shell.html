@@ -1,0 +1,28 @@
+<a class="skip-link" href="#contenido">Ir al contenido</a>
+
+<div class="auth">
+  <header class="auth__bar">
+    <app-brand />
+    <app-theme-toggle />
+  </header>
+
+  <main class="auth__main" id="contenido">
+    <section class="card auth__card">
+      <div class="card__body">
+        <p class="mono-eyebrow">{{ eyebrow() }}</p>
+        <h1 class="auth__title">{{ title() }}</h1>
+        <p class="auth__subtitle">{{ subtitle() }}</p>
+
+        <ng-content />
+      </div>
+    </section>
+
+    <div class="auth__footer">
+      <ng-content select="[data-footer]" />
+    </div>
+  </main>
+
+  <footer class="auth__legal">
+    <span class="mono-eyebrow">Retroauth · demo Angular + Spring Boot</span>
+  </footer>
+</div>

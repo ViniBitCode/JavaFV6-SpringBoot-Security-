@@ -1,0 +1,34 @@
+/* Pantalla de arranque fallido (Keycloak caído). */
+.arranque {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding: var(--space-4);
+}
+
+.arranque__card {
+  width: 100%;
+  max-width: var(--card-max-width);
+}
+
+.arranque__title {
+  margin-top: var(--space-2);
+  font-size: var(--text-2xl);
+}
+
+.arranque__text {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--c-text-muted);
+}
+
+.arranque__url {
+  margin: var(--space-4) 0 var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  background: var(--c-surface-inset);
+  border: 1px dashed var(--c-border-strong);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  overflow-wrap: anywhere;
+}

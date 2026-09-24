@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/3.2-PracticaApiSecurity/pom.xml" />
         <option value="$PROJECT_DIR$/3.2-PracticaApiSecurity/Backend/pom.xml" />
         <option value="$PROJECT_DIR$/4-ApiConKeycloak/Backend/pom.xml" />
+        <option value="$PROJECT_DIR$/4.1-ApiConKeycloak/Backend/pom.xml" />
       </list>
     </option>
   </component>

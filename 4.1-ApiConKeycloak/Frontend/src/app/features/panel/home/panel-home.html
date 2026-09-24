@@ -1,0 +1,40 @@
+<section class="home">
+  @if (perfil.cargando()) {
+    <p class="home__cargando" role="status">Cargando tu perfil…</p>
+  }
+
+  @if (perfil.error(); as mensaje) {
+    <app-alert tone="danger">{{ mensaje }}</app-alert>
+    <button type="button" class="btn btn--ghost home__reintentar" (click)="reintentar()">
+      Reintentar
+    </button>
+  }
+
+  @if (perfil.perfil(); as datos) {
+    <header class="home__head">
+      <p class="mono-eyebrow">Área privada</p>
+      <h1 class="home__title">
+        Hola,
+        <span class="home__name">{{ datos.username }}</span>
+      </h1>
+      <p class="home__lead">
+        Entraste con <strong>{{ datos.email ?? 'un usuario sin email cargado' }}</strong> y tu rol
+        es
+        <span class="badge" [class.badge--admin]="datos.role === ROL_ADMIN">{{ datos.role }}</span
+        >.
+      </p>
+    </header>
+
+    <!-- Solo para ADMIN. La seguridad real la aplica el backend: ver si-rol.directive.ts. -->
+    <section class="card home__panel" *appSiRol="ROL_ADMIN">
+      <div class="home__panel-body">
+        <p class="mono-eyebrow">Solo administradores</p>
+        <h2 class="home__panel-title">Administración de usuarios</h2>
+        <p class="home__panel-text">
+          Acá va a ir el listado de usuarios del realm y el alta de cuentas. Todavía no hay endpoint
+          en la API: el backend expone <code>/panel/me</code> únicamente.
+        </p>
+      </div>
+    </section>
+  }
+</section>

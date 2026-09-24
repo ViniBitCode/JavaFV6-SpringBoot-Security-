@@ -1,0 +1,27 @@
+@switch (estado()) {
+  <!-- Keycloak no respondió: sin esto la app quedaría en blanco sin explicación. -->
+  @case ('sin-keycloak') {
+    <main class="arranque">
+      <section class="card arranque__card">
+        <div class="card__body">
+          <p class="mono-eyebrow">No se pudo iniciar</p>
+          <h1 class="arranque__title">Keycloak no responde</h1>
+          <p class="arranque__text">
+            La app no pudo conectarse con el servidor de autenticación, así que no hay forma de
+            iniciar sesión. Revisá que Keycloak esté levantado y que el realm exista:
+          </p>
+
+          <p class="arranque__url">{{ servidor }}</p>
+
+          <button type="button" class="btn btn--primary btn--block" (click)="recargar()">
+            Reintentar
+          </button>
+        </div>
+      </section>
+    </main>
+  }
+
+  @default {
+    <router-outlet />
+  }
+}

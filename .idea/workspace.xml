@@ -5,7 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="creacion de usuario">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/auth/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/permission/PermissionServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/role/RoleEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/role/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/role/RoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/role/RoleServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/exception/ValorNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/exception/ValorYaExisteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/security/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/security/UserDetailsServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/security/jwt/JwtAuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/shared/security/jwt/JwtService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/UserEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/UserServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/dto/LoginInfoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/dto/RegisterInfoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/dto/RegisterResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/java/com/apisimple/_apiconkeycloak/user/dto/SessionInfoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4-ApiConKeycloak/Backend - copia/src/test/java/com/apisimple/_apiconkeycloak/ApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,61 +82,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="2.716139415574636E-95" />
-      <entry key="S5" value="1.8702910242083898E-38" />
-      <entry key="S10" value="2.0042545384482273E-19" />
-      <entry key="S30" value="1.7734351133027372E-6" />
-      <entry key="S60" value="0.004125726360904832" />
-      <entry key="M2" value="0.2478041326146423" />
-      <entry key="M5" value="4.638452775468953" />
-      <entry key="M10" value="14.902459067005818" />
-      <entry key="M15" value="22.578215994567493" />
-      <entry key="M30" value="35.09293868648414" />
-      <entry key="H1" value="53.36876713001811" />
-      <entry key="H2" value="118.18239618721583" />
-      <entry key="H4" value="289.5821179205971" />
-      <entry key="D1" value="905.024329447954" />
-      <entry key="W1" value="1140.9527447381174" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0000011241811728" />
-      <entry key="S60" value="1.0023161136830288" />
-      <entry key="M2" value="1.1565964048290787" />
-      <entry key="M5" value="4.5903935884385785" />
-      <entry key="M10" value="12.91421489992639" />
-      <entry key="M15" value="19.096771978324778" />
-      <entry key="M30" value="29.058756071145503" />
-      <entry key="H1" value="43.12808398314992" />
-      <entry key="H2" value="93.1898607153085" />
-      <entry key="H4" value="225.0888026613979" />
-      <entry key="D1" value="689.158722590829" />
-      <entry key="W1" value="864.8136657318151" />
+      <entry key="S2" value="1.0000351528211167" />
+      <entry key="S5" value="1.016534233771343" />
+      <entry key="S10" value="1.1285855115141006" />
+      <entry key="S30" value="1.5047356869490727" />
+      <entry key="S60" value="1.7104475370916208" />
+      <entry key="M2" value="1.842994437083663" />
+      <entry key="M5" value="1.9813198888475263" />
+      <entry key="M10" value="2.9458014011665905" />
+      <entry key="M15" value="5.500845892266609" />
+      <entry key="M30" value="16.16566856283985" />
+      <entry key="H1" value="36.71405296892751" />
+      <entry key="H2" value="96.77491393631009" />
+      <entry key="H4" value="260.0990799980034" />
+      <entry key="D1" value="892.6318144892373" />
+      <entry key="W1" value="1145.248808428731" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="9.421156866292678E-171" />
+      <entry key="S10" value="9.70626440310209E-86" />
+      <entry key="S30" value="4.5956949542846665E-29" />
+      <entry key="S60" value="6.79485299394802E-15" />
+      <entry key="M2" value="9.52290637294606E-8" />
+      <entry key="M5" value="0.006731083760697767" />
+      <entry key="M10" value="0.49452191725635936" />
+      <entry key="M15" value="2.1695599375361887" />
+      <entry key="M30" value="9.794513393618663" />
+      <entry key="H1" value="25.038775546943913" />
+      <entry key="H2" value="71.00601239092583" />
+      <entry key="H4" value="196.479444512979" />
+      <entry key="D1" value="673.7205519425788" />
+      <entry key="W1" value="862.0191349568416" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.02451825305927346" />
-      <entry key="MS500" value="0.47631899902196867" />
-      <entry key="S2" value="0.8307578929497538" />
-      <entry key="S5" value="0.928516852306729" />
-      <entry key="S10" value="0.9635957930100821" />
-      <entry key="S30" value="0.9877178113927488" />
-      <entry key="S60" value="1.0002293893090204" />
-      <entry key="M2" value="1.3995208243342019" />
-      <entry key="M5" value="9.209977170995002" />
-      <entry key="M10" value="27.785742884426348" />
-      <entry key="M15" value="41.643497022975865" />
-      <entry key="M30" value="64.12710615438769" />
-      <entry key="H1" value="96.47820089389504" />
-      <entry key="H2" value="211.35107660808555" />
-      <entry key="H4" value="514.6444766459276" />
-      <entry key="D1" value="1594.1693877510022" />
-      <entry key="W1" value="2005.763960374144" />
+      <entry key="MS100" value="0.9395227492140118" />
+      <entry key="MS500" value="0.9876008614453725" />
+      <entry key="S2" value="0.9969205467811793" />
+      <entry key="S5" value="1.0152301427534272" />
+      <entry key="S10" value="1.127739244831528" />
+      <entry key="S30" value="1.5042363018343086" />
+      <entry key="S60" value="1.7101384147407068" />
+      <entry key="M2" value="1.8428207709956606" />
+      <entry key="M5" value="1.9879414971707714" />
+      <entry key="M10" value="3.4390752225969576" />
+      <entry key="M15" value="7.6667682340771215" />
+      <entry key="M30" value="25.951845198781115" />
+      <entry key="H1" value="61.7419677437747" />
+      <entry key="H2" value="167.76476854113739" />
+      <entry key="H4" value="456.55543107451035" />
+      <entry key="D1" value="1566.3390063467232" />
+      <entry key="W1" value="2007.2655009324606" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -121,6 +158,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Maven.3-2-PracticaApiSecurity [clean].executor": "Run",
+    "Maven.4.1-ApiConKeycloak [clean].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
     "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
@@ -135,10 +173,11 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.Application (3).executor": "Run",
     "Spring Boot.Application (4).executor": "Run",
+    "Spring Boot.Application (5).executor": "Run",
     "Spring Boot.Application.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "new-projects",
+    "git-widget-placeholder": "Practica2-ApiConKeycloak",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -191,6 +230,9 @@
               <option value="Application" />
               <option value="Application (1)" />
               <option value="Application (2)" />
+              <option value="Application (3)" />
+              <option value="Application (4)" />
+              <option value="Application (5)" />
             </set>
           </value>
         </entry>
@@ -210,7 +252,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application (4)">
+  <component name="RunManager" selected="Spring Boot.Application (5)">
     <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="3-ApiConSecurity" />
@@ -242,15 +284,21 @@
     </configuration>
     <configuration name="Application (4)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
-        <env name="DB_PASSWORD" value="290703" />
-        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/4.ApiConKeycloak" />
-        <env name="DB_USER" value="postgres" />
-        <env name="JWT_EXPIRE" value="1800000" />
-        <env name="JWT_ISSUER" value="api-con-keycloak" />
-        <env name="JWT_SECRET" value="ComPtdpOzf7gyf1Gx2tjvhaf7L/iF3ofFifnyDMtvLg=" />
+        <env name="KEYCLOAK_ISSUER" value="http://localhost:8180/realms/primer-api-keycloak" />
       </envs>
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="4-ApiConKeycloak" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._apiconkeycloak.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application (5)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="KEYCLOAK_ISSUER" value="http://localhost:8180/realms/primer-api-keycloak" />
+      </envs>
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="4-ApiConKeycloak (1)" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._apiconkeycloak.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -265,6 +313,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.Application (5)" />
       <item itemvalue="Spring Boot.Application (4)" />
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.Application (1)" />
