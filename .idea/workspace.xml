@@ -14,11 +14,12 @@
       <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/src/main/java/com/apisimple/_apiconkeycloakoaut2bbdd/Application.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/src/main/resources/application.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/src/test/java/com/apisimple/_apiconkeycloakoaut2bbdd/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/src/app/core/api/api-error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/src/app/core/api/api-error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/src/app/features/panel/panel.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/src/app/features/panel/panel.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/src/app/shared/layout/app-shell/app-shell.html" beforeDir="false" afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/src/app/shared/layout/app-shell/app-shell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/src/app/shared/layout/app-shell/app-shell.ts" beforeDir="false" afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Frontend/src/app/shared/layout/app-shell/app-shell.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +33,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Spring Repository" />
-        <option value="Exception" />
         <option value="Record" />
         <option value="Dockerfile" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -61,60 +62,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="3.9602530747063207E-240" />
-      <entry key="S2" value="2.2061127381806474E-60" />
-      <entry key="S5" value="2.250140096240324E-24" />
-      <entry key="S10" value="2.993213126917599E-12" />
-      <entry key="S30" value="6.292356074606513E-4" />
-      <entry key="S60" value="0.08947779202780641" />
-      <entry key="M2" value="1.1420654803615526" />
-      <entry key="M5" value="5.759164939241233" />
-      <entry key="M10" value="11.703877867321156" />
-      <entry key="M15" value="18.326919381508233" />
-      <entry key="M30" value="43.353582752464995" />
-      <entry key="H1" value="87.43783394009964" />
-      <entry key="H2" value="154.2633361071758" />
-      <entry key="H4" value="297.8497762188403" />
-      <entry key="D1" value="994.5830141848721" />
-      <entry key="W1" value="1321.9788916406117" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.0424769907856215E-97" />
+      <entry key="S5" value="1.7600015841386463E-39" />
+      <entry key="S10" value="6.444542394750806E-20" />
+      <entry key="S30" value="1.0717207687685583E-6" />
+      <entry key="S60" value="0.002299079980745278" />
+      <entry key="M2" value="0.11739538900044148" />
+      <entry key="M5" value="2.6793402713950236" />
+      <entry key="M10" value="14.071878030127273" />
+      <entry key="M15" value="27.63572290366536" />
+      <entry key="M30" value="58.156110044997035" />
+      <entry key="H1" value="91.02947733765575" />
+      <entry key="H2" value="142.00228718123492" />
+      <entry key="H4" value="261.74422963663733" />
+      <entry key="D1" value="1009.4962765808281" />
+      <entry key="W1" value="1429.107486259518" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
       <entry key="S2" value="1.0" />
       <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0000000000065792" />
-      <entry key="S30" value="1.0009193715802331" />
-      <entry key="S60" value="1.1253560886677134" />
-      <entry key="M2" value="2.646137836223152" />
-      <entry key="M5" value="9.584606899895928" />
-      <entry key="M10" value="18.095448729038978" />
-      <entry key="M15" value="25.58976745532364" />
-      <entry key="M30" value="47.031943263189866" />
-      <entry key="H1" value="79.13450513839318" />
-      <entry key="H2" value="126.14359369987963" />
-      <entry key="H4" value="232.2002295044062" />
-      <entry key="D1" value="754.1857650017762" />
-      <entry key="W1" value="998.1565383176888" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0000019240560267" />
+      <entry key="S60" value="1.0026883313765358" />
+      <entry key="M2" value="1.1194222053428946" />
+      <entry key="M5" value="3.8206855159913014" />
+      <entry key="M10" value="14.414190926221327" />
+      <entry key="M15" value="25.759246645083966" />
+      <entry key="M30" value="49.45720193352876" />
+      <entry key="H1" value="74.38649899178219" />
+      <entry key="H2" value="113.64030085258466" />
+      <entry key="H4" value="204.74727818759982" />
+      <entry key="D1" value="768.0560133044993" />
+      <entry key="W1" value="1081.9067701911051" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2831061023768837E-5" />
-      <entry key="MS500" value="0.10511205190671434" />
-      <entry key="S2" value="0.5693943173783459" />
-      <entry key="S5" value="0.7982983863566498" />
-      <entry key="S10" value="0.8934754537047047" />
-      <entry key="S30" value="0.9646623006679523" />
-      <entry key="S60" value="1.1934113482234363" />
-      <entry key="M2" value="3.759810859191522" />
-      <entry key="M5" value="15.300493314877745" />
-      <entry key="M10" value="29.758365216679493" />
-      <entry key="M15" value="43.87840709981248" />
-      <entry key="M30" value="90.35108736507266" />
-      <entry key="H1" value="166.54349190158064" />
-      <entry key="H2" value="280.3831044606404" />
-      <entry key="H4" value="530.0260705824501" />
-      <entry key="D1" value="1748.7545064769986" />
-      <entry key="W1" value="2320.1327019735018" />
+      <entry key="MS100" value="6.46879352306209E-7" />
+      <entry key="MS500" value="0.057831526752365775" />
+      <entry key="S2" value="0.49038950199427567" />
+      <entry key="S5" value="0.7519976194620759" />
+      <entry key="S10" value="0.8671779629707363" />
+      <entry key="S30" value="0.9536098893282714" />
+      <entry key="S60" value="0.981465176143074" />
+      <entry key="M2" value="1.2237619404818756" />
+      <entry key="M5" value="6.479509589337538" />
+      <entry key="M10" value="28.442772236535458" />
+      <entry key="M15" value="53.342166659489635" />
+      <entry key="M30" value="107.56188765987666" />
+      <entry key="H1" value="165.37776870079648" />
+      <entry key="H2" value="255.6149851993866" />
+      <entry key="H4" value="466.4678205047518" />
+      <entry key="D1" value="1777.5374615266944" />
+      <entry key="W1" value="2511.011260065696" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -155,7 +156,7 @@
     "Spring Boot.Application.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Practica3-Fuchibolo",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",

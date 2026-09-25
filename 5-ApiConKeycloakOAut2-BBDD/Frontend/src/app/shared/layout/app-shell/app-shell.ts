@@ -6,10 +6,13 @@ import { SessionService } from '../../../core/session/session.service';
 import { Avatar } from '../../ui/avatar/avatar';
 import { Brand } from '../../ui/brand/brand';
 
-/** Ítem de la navegación principal. Agregar acá las secciones futuras. */
+/** Ítem de la navegación principal. Agregar acá las secciones futuras (y su ícono en el template). */
 interface NavItem {
   label: string;
   path: string;
+  icon: 'inicio' | 'torneos';
+  /** `true` solo para el ítem raíz, para que no quede activo en las rutas hijas. */
+  exact?: boolean;
 }
 
 /**
@@ -33,7 +36,10 @@ export class AppShell {
 
   private readonly userMenu = viewChild<ElementRef<HTMLElement>>('userMenu');
 
-  protected readonly navItems: NavItem[] = [{ label: 'Inicio', path: '/panel' }];
+  protected readonly navItems: NavItem[] = [
+    { label: 'Inicio', path: '/panel', icon: 'inicio', exact: true },
+    { label: 'Torneos', path: '/panel/torneos', icon: 'torneos' },
+  ];
 
   /** Nombre a mostrar: el que informa la API; mientras responde, el del token. */
   protected readonly displayName = computed(

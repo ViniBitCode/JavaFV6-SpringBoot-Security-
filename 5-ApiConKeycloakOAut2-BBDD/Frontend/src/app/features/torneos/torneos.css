@@ -1,0 +1,124 @@
+.torneos {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.torneos__hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.torneos__hero > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* --- Formulario de alta ------------------------------------------------------ */
+.torneo-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+}
+.torneo-form h2 {
+  font-size: var(--text-lg);
+}
+.torneo-form__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5) var(--space-4);
+}
+.torneo-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+/* --- Lista ------------------------------------------------------------------- */
+.torneos__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.torneo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+.torneo__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.torneo__name {
+  font-size: var(--text-lg);
+  overflow-wrap: anywhere;
+}
+.torneo__meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin: 0;
+}
+.torneo__meta dt {
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+}
+.torneo__meta dd {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+/* --- Skeleton ---------------------------------------------------------------- */
+.torneo--skeleton {
+  gap: var(--space-3);
+}
+.skeleton {
+  display: block;
+  height: 0.875rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--color-surface-2) 25%, var(--color-surface-3) 50%, var(--color-surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+.skeleton--xs { width: 30%; height: 0.75rem; }
+.skeleton--sm { width: 50%; }
+.skeleton--lg { width: 65%; height: 1.25rem; }
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}
+
+/* --- Responsive -------------------------------------------------------------- */
+@media (min-width: 40rem) {
+  .torneos__hero { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+  .torneo-form__form { grid-template-columns: repeat(3, 1fr); }
+  .torneo-form__full { grid-column: 1 / -1; }
+  .torneos__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 48rem) {
+  .torneos { padding: var(--space-8) var(--space-8) var(--space-16); gap: var(--space-8); }
+}
+
+@media (min-width: 64rem) {
+  .torneos__grid { grid-template-columns: repeat(3, 1fr); }
+}

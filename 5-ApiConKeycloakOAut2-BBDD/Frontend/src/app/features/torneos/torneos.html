@@ -1,0 +1,182 @@
+<div class="torneos">
+  <section class="torneos__hero">
+    <div>
+      <span class="kicker">Torneos</span>
+      <h1>Torneos</h1>
+      <p class="text-muted">Los torneos de fútbol amateur que organiza {{ productName }}.</p>
+    </div>
+    <!-- Solo UX: la API exige rol ADMIN en el POST. -->
+    <button type="button" class="btn btn--primary" *appSiRol="'ADMIN'" (click)="toggleForm()" [attr.aria-expanded]="formVisible()" aria-controls="torneo-form">
+      @if (formVisible()) { Cancelar } @else { Nuevo torneo }
+    </button>
+  </section>
+
+  @if (saved(); as nombre) {
+    <div class="alert alert--success" role="status">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="m8.5 12.5 2.5 2.5 4.5-5" /></svg>
+      <span>Se creó el torneo <strong>{{ nombre }}</strong>.</span>
+    </div>
+  }
+
+  @if (formVisible()) {
+    <section class="card torneo-form" id="torneo-form" *appSiRol="'ADMIN'" aria-labelledby="torneo-form-title">
+      <h2 id="torneo-form-title">Nuevo torneo</h2>
+
+      @if (saveError(); as error) {
+        <div class="alert" [class.alert--danger]="error.kind !== 'conflict'" [class.alert--warning]="error.kind === 'conflict'" role="alert">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 8v4M12 16h.01" /></svg>
+          <span>{{ error.message }}</span>
+        </div>
+      }
+
+      <form class="torneo-form__form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div class="field torneo-form__full">
+          <label class="field__label" for="torneo-nombre">Nombre</label>
+          <input
+            id="torneo-nombre"
+            class="input"
+            type="text"
+            formControlName="nombreTorneo"
+            autocomplete="off"
+            [attr.aria-invalid]="showError('nombreTorneo') || null"
+            [attr.aria-describedby]="showError('nombreTorneo') ? 'torneo-nombre-error' : null"
+          />
+          <app-field-error id="torneo-nombre-error" [message]="errorMessage('nombreTorneo')" />
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="torneo-comienzo">Comienzo</label>
+          <input
+            id="torneo-comienzo"
+            class="input"
+            type="date"
+            formControlName="fechaComienzo"
+            [attr.aria-invalid]="showError('fechaComienzo') || null"
+            [attr.aria-describedby]="showError('fechaComienzo') ? 'torneo-comienzo-error' : null"
+          />
+          <app-field-error id="torneo-comienzo-error" [message]="errorMessage('fechaComienzo')" />
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="torneo-fin">Finalización</label>
+          <input
+            id="torneo-fin"
+            class="input"
+            type="date"
+            formControlName="fechaFinalizacion"
+            [attr.aria-invalid]="showError('fechaFinalizacion') || null"
+            [attr.aria-describedby]="showError('fechaFinalizacion') ? 'torneo-fin-error' : null"
+          />
+          <app-field-error id="torneo-fin-error" [message]="errorMessage('fechaFinalizacion')" />
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="torneo-premio">Premio al ganador ($)</label>
+          <input
+            id="torneo-premio"
+            class="input tabular-nums"
+            type="number"
+            inputmode="decimal"
+            min="0"
+            step="0.01"
+            formControlName="premioGanador"
+            [attr.aria-invalid]="showError('premioGanador') || null"
+            [attr.aria-describedby]="showError('premioGanador') ? 'torneo-premio-error' : 'torneo-premio-hint'"
+          />
+          <span class="field__hint" id="torneo-premio-hint">Opcional.</span>
+          <app-field-error id="torneo-premio-error" [message]="errorMessage('premioGanador')" />
+        </div>
+
+        <div class="torneo-form__actions torneo-form__full">
+          <button type="button" class="btn btn--secondary" (click)="toggleForm()" [disabled]="saving()">Cancelar</button>
+          <button
+            type="submit"
+            class="btn btn--primary"
+            [class.is-loading]="saving()"
+            [disabled]="saving()"
+            [attr.aria-busy]="saving()"
+          >
+            Crear torneo
+          </button>
+        </div>
+      </form>
+    </section>
+  }
+
+  @if (torneos.error(); as error) {
+    <div class="alert" [class.alert--danger]="error.kind !== 'forbidden'" [class.alert--warning]="error.kind === 'forbidden'" role="alert">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 8v4M12 16h.01" /></svg>
+      <span>
+        <span class="alert__title">
+          @switch (error.kind) {
+            @case ('network') { API no disponible }
+            @case ('forbidden') { Permisos insuficientes }
+            @case ('unauthorized') { Sesión inválida }
+            @default { No se pudieron cargar los torneos }
+          }
+        </span>
+        {{ error.message }}
+      </span>
+      @if (error.kind !== 'unauthorized') {
+        <button type="button" class="btn btn--ghost btn--sm" (click)="torneos.reload()">Reintentar</button>
+      }
+    </div>
+  } @else if (isEmpty()) {
+    <section class="card empty" aria-labelledby="torneos-empty-title">
+      <span class="empty__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 4h10v4a5 5 0 0 1-10 0z" /><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4" />
+          <path d="M12 13v3M9 20h6M10 16h4v4h-4z" />
+        </svg>
+      </span>
+      <h2 id="torneos-empty-title">Todavía no hay torneos</h2>
+      <p class="empty__text" *appSiRol="'ADMIN'">Creá el primero y va a aparecer acá para todos los jugadores.</p>
+      <p class="empty__text" *appSiRol="'USER'">Cuando un organizador cree un torneo, lo vas a ver acá.</p>
+      <div class="empty__actions" *appSiRol="'ADMIN'">
+        @if (!formVisible()) {
+          <button type="button" class="btn btn--primary" (click)="toggleForm()">Crear el primer torneo</button>
+        }
+      </div>
+    </section>
+  } @else if (torneos.loaded()) {
+    <ul class="torneos__grid" aria-label="Lista de torneos">
+      @for (torneo of torneos.torneos(); track torneo.nombreTorneo) {
+        <li class="card card--interactive torneo">
+          <div class="torneo__head">
+            <h2 class="torneo__name">{{ torneo.nombreTorneo }}</h2>
+            <span class="badge tabular-nums">
+              {{ torneo.equiposInscriptos }} {{ torneo.equiposInscriptos === 1 ? 'equipo' : 'equipos' }}
+            </span>
+          </div>
+          <dl class="torneo__meta">
+            <div>
+              <dt>Comienzo</dt>
+              <dd class="tabular-nums">{{ torneo.fechaComienzo ? (torneo.fechaComienzo | date: 'd MMM yyyy') : '—' }}</dd>
+            </div>
+            <div>
+              <dt>Finalización</dt>
+              <dd class="tabular-nums">{{ torneo.fechaFinalizacion ? (torneo.fechaFinalizacion | date: 'd MMM yyyy') : '—' }}</dd>
+            </div>
+            <div>
+              <dt>Premio</dt>
+              <dd class="tabular-nums">{{ torneo.premioGanador !== null ? '$ ' + (torneo.premioGanador | number: '1.0-2') : '—' }}</dd>
+            </div>
+          </dl>
+        </li>
+      }
+    </ul>
+  } @else {
+    <section class="torneos__grid" aria-busy="true" aria-label="Cargando torneos">
+      @for (i of [1, 2, 3]; track i) {
+        <div class="card torneo torneo--skeleton">
+          <span class="skeleton skeleton--lg"></span>
+          <span class="skeleton skeleton--sm"></span>
+          <span class="skeleton skeleton--xs"></span>
+        </div>
+      }
+    </section>
+  }
+</div>

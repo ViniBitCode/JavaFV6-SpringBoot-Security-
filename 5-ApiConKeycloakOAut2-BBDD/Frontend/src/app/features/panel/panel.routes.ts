@@ -18,6 +18,11 @@ export const PANEL_ROUTES: Routes = [
         title: `Inicio · ${PRODUCT_NAME}`,
         loadComponent: () => import('./panel').then((m) => m.Panel),
       },
+      {
+        path: 'torneos',
+        title: `Torneos · ${PRODUCT_NAME}`,
+        loadComponent: () => import('../torneos/torneos').then((m) => m.Torneos),
+      },
     ],
   },
 ];

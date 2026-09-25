@@ -80,6 +80,7 @@ export const environment = {
 | --------- | ------------------------------------------------------------------------------------------- |
 | `/`       | Bienvenida pública con "Iniciar sesión" y "Crear cuenta" (redirigen a Keycloak).            |
 | `/panel`  | Inicio de la app autenticada (guard), dentro de `AppShell`. Usuario y rol desde `GET /panel/me`; contenido en estado vacío. |
+| `/panel/torneos` | Lista de torneos (`GET /torneos`, ListaTorneosDTO). ADMIN ve además el formulario de alta (`POST /torneos`, AgregarTorneoDTO); un nombre repetido devuelve 409 y se muestra el mensaje de la API. |
 | `/estilos`| Guía de estilos: tokens, componentes base y utilidades (incluye números tabulares).          |
 | `**`      | Página 404.                                                                                 |
 
@@ -116,7 +117,8 @@ src/
     │   └── session/        SessionService (GET /panel/me) + modelos de rol
     ├── features/
     │   ├── auth/           layout público + bienvenida
-    │   ├── panel/          inicio autenticado (estado vacío) + rutas dentro del shell
+    │   ├── panel/          inicio autenticado (estado vacío) + rutas hijas dentro del shell
+    │   ├── torneos/        lista y alta de torneos (TorneosService contra /torneos)
     │   ├── styleguide/     /estilos
     │   └── not-found/      404
     ├── prototypes/
