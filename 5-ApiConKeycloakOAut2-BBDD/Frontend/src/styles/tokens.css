@@ -1,0 +1,254 @@
+/* =============================================================================
+   TOKENS DE DISEÑO — FUCHIBOL
+   -----------------------------------------------------------------------------
+   CSS plano, sin ninguna dependencia de Angular.
+   Única fuente de verdad para colores, tipografía, radios, sombras, espaciados
+   y transiciones. Pensado para reutilizarse tal cual en el tema de Keycloak
+   (login/registro) cuando llegue esa etapa.
+
+   Identidad: neutros con un leve tinte verdoso y un único acento "verde césped".
+   Para cambiar la paleta alcanza con tocar los bloques "Color de acento" y
+   "Semánticos" (en modo claro y en los dos bloques de modo oscuro).
+
+   Modo claro por defecto. El modo oscuro se activa por preferencia del sistema
+   (prefers-color-scheme) o forzando data-theme="dark" en <html>.
+   data-theme="light" fuerza el modo claro aunque el sistema esté en oscuro.
+   ============================================================================= */
+
+:root {
+  color-scheme: light;
+
+  /* --- Tipografía --------------------------------------------------------- */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* Números tabulares (marcadores, tablas de posiciones): ver .tabular-nums en base.css */
+  --font-numeric-tabular: 'tnum' 1, 'lnum' 1;
+
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-md: 1rem;      /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.375rem;  /* 22px */
+  --text-2xl: 1.75rem;  /* 28px */
+  --text-3xl: 2.25rem;  /* 36px */
+  --text-4xl: 2.75rem;  /* 44px: títulos de portada */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  --leading-tight: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+
+  /* --- Espaciado (escala de 4px) ------------------------------------------ */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* --- Radios --------------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* --- Sombras -------------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(20, 32, 22, 0.06);
+  --shadow-md: 0 4px 12px -2px rgba(20, 32, 22, 0.08), 0 2px 4px -2px rgba(20, 32, 22, 0.04);
+  --shadow-lg: 0 20px 40px -12px rgba(20, 32, 22, 0.16), 0 8px 16px -8px rgba(20, 32, 22, 0.06);
+
+  /* --- Transiciones --------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+
+  /* --- Colores neutros (con un leve tinte verde) ---------------------------- */
+  --color-bg: #f5f7f4;              /* fondo de página */
+  --color-surface: #ffffff;         /* tarjetas, inputs, barras */
+  --color-surface-2: #eef2ec;       /* fondos sutiles, hover de filas */
+  --color-surface-3: #e3e8e0;       /* hover de botones secundarios */
+  --color-border: #dfe4dc;
+  --color-border-strong: #bfc7bb;
+
+  --color-text: #141a15;
+  --color-text-muted: #4b544c;
+  --color-text-subtle: #69726a;
+  --color-text-inverse: #ffffff;
+
+  /* --- Color de acento (único): verde césped -------------------------------- */
+  --color-accent: #15803d;
+  --color-accent-hover: #166534;
+  --color-accent-active: #14532d;
+  --color-accent-fg: #ffffff;       /* texto sobre el acento */
+  --color-accent-subtle: #e6f6ea;   /* fondos suaves con acento */
+  --color-accent-subtle-fg: #14532d;
+  --color-link: #15803d;
+  --color-link-hover: #14532d;
+
+  /* --- Semánticos ----------------------------------------------------------- */
+  /* Éxito en tono teal para no confundirse con el acento verde */
+  --color-success: #0f766e;
+  --color-success-subtle: #ecfdf8;
+  --color-success-border: #99f6e4;
+
+  --color-warning: #b45309;
+  --color-warning-subtle: #fffbeb;
+  --color-warning-border: #fde68a;
+
+  --color-danger: #b91c1c;
+  --color-danger-hover: #991b1b;
+  --color-danger-subtle: #fef2f2;
+  --color-danger-border: #fecaca;
+
+  --color-info: #1d4ed8;
+  --color-info-subtle: #eff6ff;
+  --color-info-border: #bfdbfe;
+
+  /* --- Recurso gráfico: líneas de cancha ------------------------------------ */
+  --pitch-line-color: var(--color-accent);
+  --pitch-line-opacity: 0.12;
+
+  /* --- Foco ----------------------------------------------------------------- */
+  --focus-ring-color: rgba(21, 128, 61, 0.35);
+  --focus-ring: 0 0 0 4px var(--focus-ring-color);
+  --focus-outline: 2px solid var(--color-accent);
+
+  /* --- Medidas de componentes ---------------------------------------------- */
+  --control-height: 2.75rem;        /* 44px: altura de inputs y botones */
+  --control-height-sm: 2.25rem;     /* 36px */
+  --control-padding-x: var(--space-4);
+  --auth-card-width: 27rem;         /* ancho máximo de la tarjeta de acceso */
+  --content-max-width: 72rem;
+  --topbar-height: 3.75rem;
+  --sidenav-width: 15rem;           /* barra lateral (escritorio) */
+  --bottomnav-height: 3.75rem;      /* menú inferior (mobile) */
+}
+
+/* --- Modo oscuro (preferencia del sistema) ---------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+
+    --color-bg: #0e120f;
+    --color-surface: #161b17;
+    --color-surface-2: #1d231f;
+    --color-surface-3: #272e29;
+    --color-border: #272e29;
+    --color-border-strong: #3b453e;
+
+    --color-text: #f2f5f1;
+    --color-text-muted: #a5ada6;
+    --color-text-subtle: #8b948c;
+    --color-text-inverse: #141a15;
+
+    --color-accent: #22c55e;
+    --color-accent-hover: #4ade80;
+    --color-accent-active: #16a34a;
+    --color-accent-fg: #052e16;
+    --color-accent-subtle: #10301c;
+    --color-accent-subtle-fg: #86efac;
+    --color-link: #4ade80;
+    --color-link-hover: #86efac;
+
+    --color-success: #2dd4bf;
+    --color-success-subtle: #042f2e;
+    --color-success-border: #115e59;
+
+    --color-warning: #fbbf24;
+    --color-warning-subtle: #2a1d05;
+    --color-warning-border: #92400e;
+
+    --color-danger: #f87171;
+    --color-danger-hover: #fca5a5;
+    --color-danger-subtle: #2a0f0f;
+    --color-danger-border: #7f1d1d;
+
+    --color-info: #60a5fa;
+    --color-info-subtle: #0b1a33;
+    --color-info-border: #1e3a8a;
+
+    --pitch-line-opacity: 0.16;
+
+    --focus-ring-color: rgba(74, 222, 128, 0.4);
+  }
+}
+
+/* --- Modo oscuro (forzado) --------------------------------------------------- */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+
+  --color-bg: #0e120f;
+  --color-surface: #161b17;
+  --color-surface-2: #1d231f;
+  --color-surface-3: #272e29;
+  --color-border: #272e29;
+  --color-border-strong: #3b453e;
+
+  --color-text: #f2f5f1;
+  --color-text-muted: #a5ada6;
+  --color-text-subtle: #8b948c;
+  --color-text-inverse: #141a15;
+
+  --color-accent: #22c55e;
+  --color-accent-hover: #4ade80;
+  --color-accent-active: #16a34a;
+  --color-accent-fg: #052e16;
+  --color-accent-subtle: #10301c;
+  --color-accent-subtle-fg: #86efac;
+  --color-link: #4ade80;
+  --color-link-hover: #86efac;
+
+  --color-success: #2dd4bf;
+  --color-success-subtle: #042f2e;
+  --color-success-border: #115e59;
+
+  --color-warning: #fbbf24;
+  --color-warning-subtle: #2a1d05;
+  --color-warning-border: #92400e;
+
+  --color-danger: #f87171;
+  --color-danger-hover: #fca5a5;
+  --color-danger-subtle: #2a0f0f;
+  --color-danger-border: #7f1d1d;
+
+  --color-info: #60a5fa;
+  --color-info-subtle: #0b1a33;
+  --color-info-border: #1e3a8a;
+
+  --pitch-line-opacity: 0.16;
+
+  --focus-ring-color: rgba(74, 222, 128, 0.4);
+}
+
+/* Usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}

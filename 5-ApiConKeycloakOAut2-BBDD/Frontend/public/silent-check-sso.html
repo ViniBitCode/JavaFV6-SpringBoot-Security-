@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chequeo silencioso de sesión</title>
+  </head>
+  <body>
+    <!--
+      Página usada por keycloak-js para el "silent check-sso": Keycloak la carga
+      en un iframe oculto y esta le devuelve a la app la URL con el resultado.
+      Debe existir en el origen de la app (http://localhost:4200/silent-check-sso.html)
+      y estar incluida en las "Valid redirect URIs" del cliente en Keycloak.
+    -->
+    <script>
+      parent.postMessage(location.href, location.origin);
+    </script>
+  </body>
+</html>

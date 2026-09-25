@@ -1,0 +1,59 @@
+.panel {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.panel__hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.panel__hero p::first-letter {
+  text-transform: none;
+}
+.panel__rol {
+  color: var(--color-accent);
+}
+
+.empty h2 {
+  font-size: var(--text-xl);
+}
+
+/* --- Skeleton --------------------------------------------------------------- */
+.panel__skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-10) var(--space-6);
+}
+
+.skeleton {
+  display: block;
+  height: 0.875rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--color-surface-2) 25%, var(--color-surface-3) 50%, var(--color-surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+.skeleton--xs { width: 30%; height: 0.75rem; }
+.skeleton--sm { width: 40%; }
+.skeleton--lg { width: 55%; height: 1.5rem; }
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}
+
+/* --- Responsive ------------------------------------------------------------- */
+@media (min-width: 48rem) {
+  .panel { padding: var(--space-8) var(--space-8) var(--space-16); gap: var(--space-8); }
+}

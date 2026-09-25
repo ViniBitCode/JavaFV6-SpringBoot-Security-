@@ -1,0 +1,19 @@
+<div class="auth">
+  <app-pitch-backdrop />
+
+  <header class="auth__header">
+    <app-brand size="lg" />
+  </header>
+
+  <main class="auth__main">
+    <div class="card card--elevated auth__card">
+      <div class="auth__card-body">
+        <router-outlet />
+      </div>
+    </div>
+  </main>
+
+  <footer class="auth__footer text-xs text-subtle">
+    © {{ year }} {{ productName }} · <a class="link" routerLink="/estilos">Guía de estilos</a>
+  </footer>
+</div>

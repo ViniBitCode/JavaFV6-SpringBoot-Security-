@@ -1,0 +1,75 @@
+<div class="panel">
+  <section class="panel__hero">
+    <span class="kicker">Inicio</span>
+    @if (session.user(); as me) {
+      <!-- Mensaje armado con la respuesta de GET /panel/me (JugadorSesionDTO: username + rol) -->
+      <h1>Hola {{ me.username }}, tu rol es <span class="panel__rol">{{ me.rol }}</span></h1>
+    } @else {
+      <h1>Hola{{ displayName() ? ', ' + displayName() : '' }}</h1>
+    }
+    <p class="text-muted">
+      Hoy es {{ today | date: 'EEEE d \'de\' MMMM' }}. Bienvenido a tu espacio en {{ productName }}.
+    </p>
+  </section>
+
+  @if (session.error(); as error) {
+    <div class="alert" [class.alert--danger]="error.kind !== 'forbidden'" [class.alert--warning]="error.kind === 'forbidden'" role="alert">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 8v4M12 16h.01" />
+      </svg>
+      <span>
+        <span class="alert__title">
+          @switch (error.kind) {
+            @case ('network') { API no disponible }
+            @case ('forbidden') { Permisos insuficientes }
+            @case ('unauthorized') { Sesión inválida }
+            @default { Error al cargar la sesión }
+          }
+        </span>
+        {{ error.message }}
+      </span>
+      @if (error.kind !== 'unauthorized') {
+        <button type="button" class="btn btn--ghost btn--sm" (click)="session.reload()">Reintentar</button>
+      }
+    </div>
+  } @else if (session.rol() === 'SIN_ROL') {
+    <div class="alert alert--warning" role="status">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 8v4M12 16h.01" />
+      </svg>
+      <span>
+        <span class="alert__title">Tu cuenta no tiene permisos asignados</span>
+        Pedile a un organizador que te asigne un rol para ver el contenido.
+      </span>
+    </div>
+  }
+
+  <!-- Solo UX: la API valida el rol en cada petición aunque el bloque se muestre. -->
+  <section class="card empty" *appSiRol="['ADMIN', 'USER']" aria-labelledby="empty-title">
+    <span class="empty__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9.25" />
+        <path d="m12 7.4 4.1 3-1.6 4.8H9.5L7.9 10.4z" />
+        <path d="M12 7.4V2.8M16.1 10.4l4.4-1.4M14.5 15.2l2.7 3.6M9.5 15.2l-2.7 3.6M7.9 10.4 3.5 9" />
+      </svg>
+    </span>
+    <h2 id="empty-title">Tu cancha está lista</h2>
+    <p class="empty__text">
+      Todavía no hay nada para mostrar. A medida que {{ productName }} sume secciones, las vas a
+      encontrar en el menú principal.
+    </p>
+  </section>
+
+  @if (session.loading() && !session.user()) {
+    <section class="card panel__skeleton" aria-busy="true" aria-label="Cargando">
+      <span class="skeleton skeleton--sm"></span>
+      <span class="skeleton skeleton--lg"></span>
+      <span class="skeleton skeleton--xs"></span>
+    </section>
+  }
+</div>

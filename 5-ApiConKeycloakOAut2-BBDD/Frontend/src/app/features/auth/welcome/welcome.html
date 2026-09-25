@@ -1,0 +1,55 @@
+<header class="auth-heading">
+  <span class="kicker">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M4 12h16M12 4v16" />
+    </svg>
+    {{ tagline }}
+  </span>
+  <h1>Organizá tu torneo y seguí cada partido desde un solo lugar.</h1>
+  <p class="text-muted">
+    {{ productName }} es el espacio para armar torneos de fútbol amateur. Entrá con tu cuenta
+    o creá una para empezar.
+  </p>
+</header>
+
+@if (notice(); as message) {
+  <div class="alert" [class.alert--danger]="unavailable()" [class.alert--warning]="!unavailable()" role="alert">
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 8v4M12 16h.01" />
+    </svg>
+    <span>{{ message }}</span>
+  </div>
+}
+
+<div class="welcome__actions">
+  @if (isAuthenticated()) {
+    <a class="btn btn--primary btn--block" routerLink="/panel">Ir al panel</a>
+  } @else {
+    <button
+      type="button"
+      class="btn btn--primary btn--block"
+      (click)="login()"
+      [class.is-loading]="pending() === 'login'"
+      [disabled]="unavailable() || pending() !== null"
+      [attr.aria-busy]="pending() === 'login'"
+    >
+      Iniciar sesión
+    </button>
+    <button
+      type="button"
+      class="btn btn--secondary btn--block"
+      (click)="register()"
+      [class.is-loading]="pending() === 'register'"
+      [disabled]="unavailable() || pending() !== null"
+      [attr.aria-busy]="pending() === 'register'"
+    >
+      Crear cuenta
+    </button>
+  }
+</div>
+
+<p class="auth-switch text-xs text-subtle">
+  El inicio de sesión y el registro se realizan en el servidor de identidad.
+</p>

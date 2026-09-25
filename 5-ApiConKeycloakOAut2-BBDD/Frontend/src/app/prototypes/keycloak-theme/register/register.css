@@ -1,0 +1,31 @@
+/* Prototipo de registro: referencia visual para el tema de Keycloak.
+   Toma todo de tokens.css y base.css; acá solo va la disposición. */
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.auth-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.auth-heading h1 {
+  font-size: var(--text-2xl);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.checklist {
+  margin-top: var(--space-1);
+}
+
+.auth-switch {
+  text-align: center;
+}

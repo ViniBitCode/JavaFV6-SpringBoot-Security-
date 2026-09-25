@@ -1,0 +1,56 @@
+<header class="auth-heading">
+  <h1>Iniciar sesión</h1>
+  <p class="text-muted text-sm">Bienvenido de nuevo. Ingresa tus datos para continuar.</p>
+</header>
+
+<form class="auth-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <div class="field">
+    <label class="field__label" for="login-username">Usuario</label>
+    <input
+      id="login-username"
+      class="input"
+      type="text"
+      formControlName="username"
+      autocomplete="username"
+      autocapitalize="none"
+      spellcheck="false"
+      [attr.aria-invalid]="showError('username') || null"
+      [attr.aria-describedby]="showError('username') ? 'login-username-error' : null"
+    />
+    <app-field-error id="login-username-error" [message]="errorMessage('username')" />
+  </div>
+
+  <div class="field">
+    <div class="field__row">
+      <label class="field__label" for="login-password">Contraseña</label>
+      <!-- Sin destino por ahora: la recuperación de contraseña la gestionará Keycloak. -->
+      <a class="link text-sm" href="#" (click)="$event.preventDefault()">¿Olvidaste tu contraseña?</a>
+    </div>
+    <app-password-field
+      id="login-password"
+      [control]="form.controls.password"
+      autocomplete="current-password"
+      [invalid]="showError('password')"
+      [describedBy]="showError('password') ? 'login-password-error' : null"
+    />
+    <app-field-error id="login-password-error" [message]="errorMessage('password')" />
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn--primary btn--block"
+    [class.is-loading]="loading()"
+    [disabled]="loading()"
+    [attr.aria-busy]="loading()"
+  >
+    Iniciar sesión
+  </button>
+</form>
+
+<div class="divider" role="separator">o continuar con</div>
+
+<app-social-buttons />
+
+<p class="auth-switch text-sm text-muted">
+  ¿No tienes cuenta? <a class="link" routerLink="/register">Crear cuenta</a>
+</p>

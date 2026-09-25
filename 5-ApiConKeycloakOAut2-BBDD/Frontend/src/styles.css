@@ -1,0 +1,5 @@
+/* Estilos globales de la aplicación.
+   Los tokens (tokens.css) y los componentes base (base.css) son CSS plano,
+   independientes de Angular, para poder reutilizarlos en el tema de Keycloak. */
+@import './styles/tokens.css';
+@import './styles/base.css';

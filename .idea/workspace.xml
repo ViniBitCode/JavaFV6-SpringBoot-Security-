@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecc87083-82a9-4015-a9b5-5a10b86a9919" name="Changes" comment="creacion de usuario">
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/src/main/java/com/apisimple/_apiconkeycloakoaut2bbdd/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD/src/test/java/com/apisimple/_apiconkeycloakoaut2bbdd/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4.1-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/shared/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/4.1-ApiConKeycloak/Backend/src/main/java/com/apisimple/_apiconkeycloak/shared/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,16 +32,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Spring Repository" />
-        <option value="Interface" />
         <option value="Exception" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Dockerfile" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/5-ApiConKeycloakOAut2-BBDD/Backend/5-ApiConKeycloakOAut2-BBDD" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46-sources.jar!/lombok/AllArgsConstructor.java" root0="FORCE_HIGHLIGHTING" />
@@ -47,61 +60,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000351528211167" />
-      <entry key="S5" value="1.016534233771343" />
-      <entry key="S10" value="1.1285855115141006" />
-      <entry key="S30" value="1.5047356869490727" />
-      <entry key="S60" value="1.7104475370916208" />
-      <entry key="M2" value="1.842994437083663" />
-      <entry key="M5" value="1.9813198888475263" />
-      <entry key="M10" value="2.9458014011665905" />
-      <entry key="M15" value="5.500845892266609" />
-      <entry key="M30" value="16.16566856283985" />
-      <entry key="H1" value="36.71405296892751" />
-      <entry key="H2" value="96.77491393631009" />
-      <entry key="H4" value="260.0990799980034" />
-      <entry key="D1" value="892.6318144892373" />
-      <entry key="W1" value="1145.248808428731" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="3.9602530747063207E-240" />
+      <entry key="S2" value="2.2061127381806474E-60" />
+      <entry key="S5" value="2.250140096240324E-24" />
+      <entry key="S10" value="2.993213126917599E-12" />
+      <entry key="S30" value="6.292356074606513E-4" />
+      <entry key="S60" value="0.08947779202780641" />
+      <entry key="M2" value="1.1420654803615526" />
+      <entry key="M5" value="5.759164939241233" />
+      <entry key="M10" value="11.703877867321156" />
+      <entry key="M15" value="18.326919381508233" />
+      <entry key="M30" value="43.353582752464995" />
+      <entry key="H1" value="87.43783394009964" />
+      <entry key="H2" value="154.2633361071758" />
+      <entry key="H4" value="297.8497762188403" />
+      <entry key="D1" value="994.5830141848721" />
+      <entry key="W1" value="1321.9788916406117" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="9.421156866292678E-171" />
-      <entry key="S10" value="9.70626440310209E-86" />
-      <entry key="S30" value="4.5956949542846665E-29" />
-      <entry key="S60" value="6.79485299394802E-15" />
-      <entry key="M2" value="9.52290637294606E-8" />
-      <entry key="M5" value="0.006731083760697767" />
-      <entry key="M10" value="0.49452191725635936" />
-      <entry key="M15" value="2.1695599375361887" />
-      <entry key="M30" value="9.794513393618663" />
-      <entry key="H1" value="25.038775546943913" />
-      <entry key="H2" value="71.00601239092583" />
-      <entry key="H4" value="196.479444512979" />
-      <entry key="D1" value="673.7205519425788" />
-      <entry key="W1" value="862.0191349568416" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0000000000065792" />
+      <entry key="S30" value="1.0009193715802331" />
+      <entry key="S60" value="1.1253560886677134" />
+      <entry key="M2" value="2.646137836223152" />
+      <entry key="M5" value="9.584606899895928" />
+      <entry key="M10" value="18.095448729038978" />
+      <entry key="M15" value="25.58976745532364" />
+      <entry key="M30" value="47.031943263189866" />
+      <entry key="H1" value="79.13450513839318" />
+      <entry key="H2" value="126.14359369987963" />
+      <entry key="H4" value="232.2002295044062" />
+      <entry key="D1" value="754.1857650017762" />
+      <entry key="W1" value="998.1565383176888" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9395227492140118" />
-      <entry key="MS500" value="0.9876008614453725" />
-      <entry key="S2" value="0.9969205467811793" />
-      <entry key="S5" value="1.0152301427534272" />
-      <entry key="S10" value="1.127739244831528" />
-      <entry key="S30" value="1.5042363018343086" />
-      <entry key="S60" value="1.7101384147407068" />
-      <entry key="M2" value="1.8428207709956606" />
-      <entry key="M5" value="1.9879414971707714" />
-      <entry key="M10" value="3.4390752225969576" />
-      <entry key="M15" value="7.6667682340771215" />
-      <entry key="M30" value="25.951845198781115" />
-      <entry key="H1" value="61.7419677437747" />
-      <entry key="H2" value="167.76476854113739" />
-      <entry key="H4" value="456.55543107451035" />
-      <entry key="D1" value="1566.3390063467232" />
-      <entry key="W1" value="2007.2655009324606" />
+      <entry key="MS100" value="1.2831061023768837E-5" />
+      <entry key="MS500" value="0.10511205190671434" />
+      <entry key="S2" value="0.5693943173783459" />
+      <entry key="S5" value="0.7982983863566498" />
+      <entry key="S10" value="0.8934754537047047" />
+      <entry key="S30" value="0.9646623006679523" />
+      <entry key="S60" value="1.1934113482234363" />
+      <entry key="M2" value="3.759810859191522" />
+      <entry key="M5" value="15.300493314877745" />
+      <entry key="M10" value="29.758365216679493" />
+      <entry key="M15" value="43.87840709981248" />
+      <entry key="M30" value="90.35108736507266" />
+      <entry key="H1" value="166.54349190158064" />
+      <entry key="H2" value="280.3831044606404" />
+      <entry key="H4" value="530.0260705824501" />
+      <entry key="D1" value="1748.7545064769986" />
+      <entry key="W1" value="2320.1327019735018" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -119,49 +132,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Maven.3-2-PracticaApiSecurity [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.4.1-ApiConKeycloak [clean].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;New/updated database configurations found&quot;,
-    &quot;Notification.DoNotAsk-DatabaseConfigFileWatcher.found&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ruby.rubocop.migration.global.runOnSaveToExternalFormatter&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Application (3).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Application (4).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Application (5).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Practica2-ApiConKeycloak&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;G:/Proyectos personales/ProyectosJava&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Maven.3-2-PracticaApiSecurity [clean].executor": "Run",
+    "Maven.4.1-ApiConKeycloak [clean].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
+    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.ruby.rubocop.migration.global.runOnSaveToExternalFormatter": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.Application (3).executor": "Run",
+    "Spring Boot.Application (4).executor": "Run",
+    "Spring Boot.Application (5).executor": "Run",
+    "Spring Boot.Application.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "G:/Proyectos personales/ProyectosJava",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.editor",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Proyectos personales\ProyectosJava\4-ApiConKeycloak\Backend\src\main\resources" />
@@ -193,11 +206,6 @@
           <value>
             <set>
               <option value="Application" />
-              <option value="Application (1)" />
-              <option value="Application (2)" />
-              <option value="Application (3)" />
-              <option value="Application (4)" />
-              <option value="Application (5)" />
             </set>
           </value>
         </entry>
@@ -209,82 +217,27 @@
           <value>
             <map>
               <entry key="Application" value="STOPPED" />
-              <entry key="Application (3)" value="STOPPED" />
-              <entry key="Application (4)" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application (5)">
-    <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="3-ApiConSecurity" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._apiconsecurity.Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Application (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="3-1-ApiConOAuth2" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._1apiconoauth2.Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Application (3)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <envs>
-        <env name="DB_PASSWORD" value="290703" />
-        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/3.2.PracticaConSecurity" />
-        <env name="DB_USER" value="postgres" />
-        <env name="SS_PASSWORD" value="1234" />
-        <env name="SS_USER" value="facuvini" />
-      </envs>
-      <module name="3-2-PracticaApiSecurity" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._2practicaapisecurity.Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Application (4)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <envs>
-        <env name="KEYCLOAK_ISSUER" value="http://localhost:8180/realms/primer-api-keycloak" />
-      </envs>
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="4-ApiConKeycloak" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._apiconkeycloak.Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Application (5)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <envs>
-        <env name="KEYCLOAK_ISSUER" value="http://localhost:8180/realms/primer-api-keycloak" />
-      </envs>
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="4-ApiConKeycloak (1)" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._apiconkeycloak.Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="KEYCLOAK_ISSUER" value="http://localhost:8180/realms/segunda-api-keycloak-fuchibol" />
+        <env name="DB_URL" value="jdbc:postgresql://localhost:5432/5.PracticaFuchibolo" />
+        <env name="DB_USERNAME" value="postgres" />
+        <env name="DB_PASSWORD" value="290703" />
+      </envs>
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="2-BackendSimple" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._backendsimple.Application" />
+      <module name="5-ApiConKeycloakOAut2-BBDD" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.apisimple._apiconkeycloakoaut2bbdd.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.Application (5)" />
-      <item itemvalue="Spring Boot.Application (4)" />
-      <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="Spring Boot.Application (1)" />
-      <item itemvalue="Spring Boot.Application (2)" />
-      <item itemvalue="Spring Boot.Application (3)" />
-    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

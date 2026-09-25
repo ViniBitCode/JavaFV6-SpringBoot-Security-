@@ -1,0 +1,321 @@
+<header class="sg-topbar">
+  <div class="sg-topbar__inner">
+    <div class="sg-topbar__left">
+      <app-brand />
+      <span class="badge">Guía de estilos</span>
+    </div>
+    <div class="sg-topbar__right">
+      <div class="sg-segment" role="group" aria-label="Tema">
+        @for (option of themes; track option.value) {
+          <button
+            type="button"
+            class="sg-segment__btn"
+            [class.is-active]="theme() === option.value"
+            [attr.aria-pressed]="theme() === option.value"
+            (click)="setTheme(option.value)"
+          >
+            {{ option.label }}
+          </button>
+        }
+      </div>
+      <a class="btn btn--secondary btn--sm" routerLink="/">Ir al inicio</a>
+    </div>
+  </div>
+</header>
+
+<main class="sg">
+  <section class="sg-intro">
+    <h1>Sistema de diseño de {{ productName }}</h1>
+    <p class="text-muted">
+      Todos los valores viven en <code>src/styles/tokens.css</code> y los componentes base en
+      <code>src/styles/base.css</code>. Ambos son CSS plano, sin dependencia de Angular, para
+      reutilizarlos en el tema de Keycloak.
+    </p>
+  </section>
+
+  <!-- ==================== Colores ==================== -->
+  <section class="sg-section" aria-labelledby="sg-colors">
+    <h2 id="sg-colors">Colores</h2>
+
+    <h3 class="sg-subtitle">Neutros</h3>
+    <div class="sg-swatches">
+      @for (token of neutralColors; track token.name) {
+        <div class="sg-swatch">
+          <span class="sg-swatch__color" [style.background]="cssVar(token.name)"></span>
+          <span class="sg-swatch__label">{{ token.label }}</span>
+          <code class="sg-swatch__name">{{ token.name }}</code>
+        </div>
+      }
+    </div>
+
+    <h3 class="sg-subtitle">Acento (único)</h3>
+    <div class="sg-swatches">
+      @for (token of accentColors; track token.name) {
+        <div class="sg-swatch">
+          <span class="sg-swatch__color" [style.background]="cssVar(token.name)"></span>
+          <span class="sg-swatch__label">{{ token.label }}</span>
+          <code class="sg-swatch__name">{{ token.name }}</code>
+        </div>
+      }
+    </div>
+
+    <h3 class="sg-subtitle">Semánticos</h3>
+    <div class="sg-swatches">
+      @for (token of semanticColors; track token.name) {
+        <div class="sg-swatch">
+          <span class="sg-swatch__color" [style.background]="cssVar(token.name)"></span>
+          <span class="sg-swatch__label">{{ token.label }}</span>
+          <code class="sg-swatch__name">{{ token.name }}</code>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- ==================== Tipografía ==================== -->
+  <section class="sg-section" aria-labelledby="sg-type">
+    <h2 id="sg-type">Tipografía</h2>
+    <p class="text-sm text-muted">Familia: <code>--font-sans</code> (Inter con fallback del sistema).</p>
+    <div class="card sg-type">
+      @for (token of typeScale; track token.name) {
+        <div class="sg-type__row">
+          <code class="sg-type__name">{{ token.name }} · {{ token.label }}</code>
+          <span class="sg-type__sample" [style.font-size]="cssVar(token.name)">{{ productName }}: fútbol amateur, bien organizado</span>
+        </div>
+      }
+    </div>
+
+    <h3 class="sg-subtitle">Números tabulares</h3>
+    <p class="text-sm text-muted">
+      La clase <code>.tabular-nums</code> hace que todas las cifras ocupen el mismo ancho. Se usará en marcadores y tablas.
+    </p>
+    <div class="sg-grid-3">
+      <div class="card card__body sg-block">
+        <span class="text-xs text-subtle">Proporcionales (por defecto)</span>
+        <div class="sg-nums">
+          <span>11 – 1</span>
+          <span>10 – 0</span>
+          <span>17 – 7</span>
+        </div>
+      </div>
+      <div class="card card__body sg-block">
+        <span class="text-xs text-subtle"><code>.tabular-nums</code></span>
+        <div class="sg-nums tabular-nums">
+          <span>11 – 1</span>
+          <span>10 – 0</span>
+          <span>17 – 7</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Espaciado, radios y sombras ==================== -->
+  <section class="sg-section" aria-labelledby="sg-space">
+    <h2 id="sg-space">Espaciado, radios y sombras</h2>
+    <div class="sg-grid-3">
+      <div class="card card__body sg-block">
+        <h3 class="sg-subtitle">Espaciado</h3>
+        @for (token of spacing; track token.name) {
+          <div class="sg-space-row">
+            <span class="sg-space-bar" [style.width]="cssVar(token.name)"></span>
+            <code>{{ token.name }}</code>
+            <span class="text-xs text-subtle">{{ token.label }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="card card__body sg-block">
+        <h3 class="sg-subtitle">Radios</h3>
+        <div class="sg-radii">
+          @for (token of radii; track token.name) {
+            <div class="sg-radius">
+              <span class="sg-radius__box" [style.border-radius]="cssVar(token.name)"></span>
+              <code>{{ token.name }}</code>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="card card__body sg-block">
+        <h3 class="sg-subtitle">Sombras</h3>
+        <div class="sg-shadows">
+          @for (token of shadows; track token.name) {
+            <div class="sg-shadow">
+              <span class="sg-shadow__box" [style.box-shadow]="cssVar(token.name)"></span>
+              <code>{{ token.name }}</code>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Botones ==================== -->
+  <section class="sg-section" aria-labelledby="sg-buttons">
+    <h2 id="sg-buttons">Botones</h2>
+    <div class="card card__body">
+      <table class="sg-table">
+        <thead>
+          <tr>
+            <th scope="col">Variante</th>
+            <th scope="col">Normal</th>
+            <th scope="col">Deshabilitado</th>
+            <th scope="col">Cargando</th>
+            <th scope="col">Pequeño</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><code>.btn--primary</code></th>
+            <td><button type="button" class="btn btn--primary">Guardar</button></td>
+            <td><button type="button" class="btn btn--primary" disabled>Guardar</button></td>
+            <td><button type="button" class="btn btn--primary is-loading" aria-busy="true">Guardar</button></td>
+            <td><button type="button" class="btn btn--primary btn--sm">Guardar</button></td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.btn--secondary</code></th>
+            <td><button type="button" class="btn btn--secondary">Cancelar</button></td>
+            <td><button type="button" class="btn btn--secondary" disabled>Cancelar</button></td>
+            <td><button type="button" class="btn btn--secondary is-loading" aria-busy="true">Cancelar</button></td>
+            <td><button type="button" class="btn btn--secondary btn--sm">Cancelar</button></td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.btn--ghost</code></th>
+            <td><button type="button" class="btn btn--ghost">Ver más</button></td>
+            <td><button type="button" class="btn btn--ghost" disabled>Ver más</button></td>
+            <td><button type="button" class="btn btn--ghost is-loading" aria-busy="true">Ver más</button></td>
+            <td><button type="button" class="btn btn--ghost btn--sm">Ver más</button></td>
+          </tr>
+          <tr>
+            <th scope="row"><code>.btn--danger</code></th>
+            <td><button type="button" class="btn btn--danger">Eliminar</button></td>
+            <td><button type="button" class="btn btn--danger" disabled>Eliminar</button></td>
+            <td><button type="button" class="btn btn--danger is-loading" aria-busy="true">Eliminar</button></td>
+            <td><button type="button" class="btn btn--danger btn--sm">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-xs text-subtle sg-note">Hover y foco: pasa el cursor o navega con Tab para verlos.</p>
+    </div>
+
+    <h3 class="sg-subtitle">Proveedores externos</h3>
+    <div class="card card__body sg-narrow">
+      <app-social-buttons />
+    </div>
+  </section>
+
+  <!-- ==================== Inputs ==================== -->
+  <section class="sg-section" aria-labelledby="sg-inputs">
+    <h2 id="sg-inputs">Campos de formulario</h2>
+    <div class="card card__body sg-fields">
+      <div class="field">
+        <label class="field__label" for="sg-input-default">Normal</label>
+        <input id="sg-input-default" class="input" type="text" placeholder="Escribe algo" [formControl]="inputDefault" />
+        <span class="field__hint">Texto de ayuda opcional.</span>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="sg-input-filled">Con valor</label>
+        <input id="sg-input-filled" class="input" type="text" [formControl]="inputFilled" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="sg-input-invalid">Con error</label>
+        <input
+          id="sg-input-invalid"
+          class="input"
+          type="email"
+          [formControl]="inputInvalid"
+          aria-invalid="true"
+          aria-describedby="sg-input-invalid-error"
+        />
+        <app-field-error id="sg-input-invalid-error" message="Ingresa un email válido." />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="sg-input-disabled">Deshabilitado</label>
+        <input id="sg-input-disabled" class="input" type="text" [formControl]="inputDisabled" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="sg-input-password">Contraseña</label>
+        <app-password-field id="sg-input-password" [control]="inputPassword" autocomplete="new-password" />
+        <ul class="checklist" aria-label="Requisitos">
+          <li class="checklist__item is-met">
+            <span class="checklist__icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5 5 9l4.5-6" /></svg>
+            </span>
+            Requisito cumplido
+          </li>
+          <li class="checklist__item">
+            <span class="checklist__icon" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5 5 9l4.5-6" /></svg>
+            </span>
+            Requisito pendiente
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Tarjetas ==================== -->
+  <section class="sg-section" aria-labelledby="sg-cards">
+    <h2 id="sg-cards">Tarjetas</h2>
+    <div class="sg-grid-3">
+      <article class="card card__body">
+        <h3>Tarjeta base</h3>
+        <p class="text-sm text-muted">Borde sutil y sombra pequeña. Es el contenedor por defecto.</p>
+      </article>
+      <article class="card card--elevated card__body">
+        <h3>Tarjeta elevada</h3>
+        <p class="text-sm text-muted">Sombra grande. Se usa para el formulario de acceso y menús.</p>
+      </article>
+      <article class="card card--interactive card__body">
+        <h3>Tarjeta interactiva</h3>
+        <p class="text-sm text-muted">Se eleva levemente al pasar el cursor. Para elementos clicables.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== Alertas y badges ==================== -->
+  <section class="sg-section" aria-labelledby="sg-alerts">
+    <h2 id="sg-alerts">Alertas y badges</h2>
+    <div class="sg-alerts">
+      <div class="alert alert--info" role="status">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 8h.01M11 12h1v4h1" /></svg>
+        <div><span class="alert__title">Información</span> Tu sesión expira en 10 minutos.</div>
+      </div>
+      <div class="alert alert--success" role="status">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="m8.5 12.5 2.5 2.5 4.5-5" /></svg>
+        <div><span class="alert__title">Listo</span> Los cambios se guardaron correctamente.</div>
+      </div>
+      <div class="alert alert--warning" role="status">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z" /><path d="M12 10v4M12 17h.01" /></svg>
+        <div><span class="alert__title">Atención</span> Hay cambios sin guardar.</div>
+      </div>
+      <div class="alert alert--danger" role="alert">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" /><path d="m9 9 6 6M15 9l-6 6" /></svg>
+        <div><span class="alert__title">Error</span> Usuario o contraseña incorrectos.</div>
+      </div>
+    </div>
+
+    <div class="sg-badges">
+      <span class="badge">Acento</span>
+      <span class="badge badge--success">Completado</span>
+      <span class="badge badge--warning">Pendiente</span>
+      <span class="badge badge--danger">Cancelado</span>
+    </div>
+  </section>
+
+  <!-- ==================== Otros ==================== -->
+  <section class="sg-section" aria-labelledby="sg-misc">
+    <h2 id="sg-misc">Marca, avatar y enlaces</h2>
+    <div class="card card__body sg-misc">
+      <app-brand />
+      <app-brand size="lg" />
+      <app-avatar name="Facundo Vinitzca" />
+      <app-avatar name="facundo" size="lg" />
+      <a class="link" href="#" (click)="$event.preventDefault()">Enlace de texto</a>
+      <div class="divider sg-divider">separador</div>
+    </div>
+  </section>
+</main>

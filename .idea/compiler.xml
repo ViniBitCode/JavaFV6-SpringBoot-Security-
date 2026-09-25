@@ -9,6 +9,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="3-1-ApiConOAuth2" />
       </profile>
+      <profile name="Annotation profile for 4-ApiConKeycloak" enabled="true">
+        <sourceOutputDir name="../../4-ApiConKeycloak/Backend/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../4-ApiConKeycloak/Backend/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="4-ApiConKeycloak" />
+      </profile>
       <profile name="Annotation profile for 4.1-ApiConKeycloak" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -17,11 +27,19 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
-        <module name="4-ApiConKeycloak" />
         <module name="3-ApiConSecurity" />
         <module name="2-BackendSimple" />
         <module name="4-ApiConKeycloak (1)" />
         <module name="3-2-PracticaApiSecurity" />
+      </profile>
+      <profile name="Annotation profile for 5-ApiConKeycloakOAut2-BBDD" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="5-ApiConKeycloakOAut2-BBDD" />
       </profile>
     </annotationProcessing>
   </component>
@@ -33,6 +51,7 @@
       <module name="3-ApiConSecurity" options="-parameters" />
       <module name="4-ApiConKeycloak" options="-parameters" />
       <module name="4-ApiConKeycloak (1)" options="-parameters" />
+      <module name="5-ApiConKeycloakOAut2-BBDD" options="-parameters" />
     </option>
   </component>
 </project>

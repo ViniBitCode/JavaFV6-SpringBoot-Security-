@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.auth-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.auth-heading h1 {
+  font-size: var(--text-2xl);
+}
+
+.kicker svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.welcome__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.auth-switch {
+  text-align: center;
+}
+
+@media (min-width: 40rem) {
+  .auth-heading h1 {
+    font-size: var(--text-3xl);
+  }
+}
